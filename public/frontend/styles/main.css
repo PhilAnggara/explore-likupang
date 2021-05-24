@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Viga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+body {
+  font-family: "Assistant", sans-serif;
+}
+
+body.with-background {
+  background-image: url("../images/header.jpg");
+  background-position: center;
+}
+
+.home-page nav {
+  position: relative;
+  z-index: 10;
+}
+.home-page nav .navbar-brand {
+  font-family: "Kaushan Script", cursive;
+  font-size: 30px;
+  color: #ffffff !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+.home-page nav .navbar-nav .active {
+  font-weight: bold;
+}
+.home-page .jumbotron {
+  background-image: url("../images/header.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-top: -75px;
+  height: 450px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+.home-page .jumbotron::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+}
+.home-page .jumbotron .container {
+  z-index: 1;
+  position: relative;
+}
+.home-page .jumbotron form input {
+  width: 350px !important;
+}
+.home-page .jumbotron .display-4 {
+  font-family: "Dancing Script", cursive;
+  color: white;
+  font-weight: 700;
+  margin-top: 50px;
+  font-size: 60px;
+}
+.home-page .jumbotron .lead {
+  color: white;
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: 300;
+}
+.home-page .populer {
+  margin-top: 80px;
+}
+.home-page .populer h2 {
+  font-family: "Lobster", serif;
+}
+.home-page .populer .row {
+  margin-top: 50px;
+}
+.home-page .populer .row .card {
+  height: 380px;
+  background-color: #ddd;
+  color: #fff;
+  padding: 30px;
+  background-size: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 10px #2e2e2e;
+}
+.home-page .populer .row .card:hover {
+  box-shadow: 0 10px 20px #2e2e2e;
+}
+.home-page .populer .row .card .travel-location {
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #000000;
+  color: #e6e6e6;
+}
+.home-page .populer .row .card .travel-name {
+  margin-top: -20px !important;
+  font-size: 26px;
+  text-shadow: 0px 0px 5px #000000;
+}
+.home-page .populer .travel-button .btn-travel-details {
+  background-color: #ff9e53;
+  color: #fff;
+}
+.home-page .populer .travel-button .btn-travel-details:hover {
+  background-color: #ffae6f;
+  color: #fff;
+}
+
+nav {
+  position: relative;
+  z-index: 1;
+}
+nav .navbar-brand {
+  font-family: "Kaushan Script", cursive;
+  font-size: 30px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+nav .navbar-nav .active {
+  font-weight: bold;
+}
+
+.section-breadcrumb {
+  height: 180px;
+  background-image: url("../images/breadcrumb.jpg");
+  background-position: center;
+}
+
+main {
+  margin-top: 50px;
+  min-height: 63vh;
+}
+main h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+main h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+main h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+main .nama-desa {
+  font-size: 18px;
+}
+main .saran {
+  font-size: 14px;
+  color: #5f5f5f;
+}
+main .struktur-lg {
+  width: 100%;
+  display: inline;
+}
+main .struktur-sm {
+  width: 100%;
+  display: none;
+}
+main .list-wisata {
+  height: 150px;
+}
+main .list-wisata .card-body {
+  padding: 15px 30px;
+}
+main .list-wisata .card-body img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+}
+main .list-wisata .card-body .alamat {
+  font-weight: 600;
+  color: #495057;
+  margin: 0 0;
+}
+main .list-wisata .card-body .jarak {
+  font-size: 14px;
+  color: #495057;
+  margin: 0 0;
+}
+main .list-wisata .card-body .btn-detail {
+  background-color: #ff9e53;
+  color: #fff;
+  margin-top: 5px;
+}
+main .list-wisata .card-body .btn-detail:hover {
+  background-color: #ffae6f;
+  color: #fff;
+}
+main .gallery .xzoom-container {
+  display: block;
+}
+main .gallery .xzoom-container .xzoom {
+  width: 100%;
+  margin-bottom: 10px;
+  box-shadow: none;
+}
+main .gallery .xzoom-container .xactive {
+  border: 4px solid #1abc9c;
+  box-shadow: none;
+}
+main .gallery .xzoom-thumbs {
+  width: 100%;
+}
+main .gallery .xzoom-thumbs .xzoom-gallery {
+  width: 23%;
+}
+main .lokasi .card {
+  position: sticky;
+  top: 20px;
+}
+
+.h-scale {
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12), 0.3s box-shadow;
+}
+.h-scale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.login {
+  background: #007bff;
+  background: url("../images/puncak-pulisan-1.JPG");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.login :root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+.login body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF) !important;
+}
+.login .card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.login .card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.login .card-signin .card-img-left {
+  width: 45%;
+  /* Link to your background image using in the property below! */
+  background: scroll center url("../images/bukit-larata-1.JPG");
+  background-size: cover;
+}
+.login .card-signin .card-body {
+  padding: 2rem;
+}
+.login .form-signin {
+  width: 100%;
+}
+.login .form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+.login .form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.login .form-label-group input {
+  height: 50px;
+  border-radius: 2rem;
+}
+.login .form-label-group > input,
+.login .form-label-group > label {
+  padding: 12px 15px;
+}
+.login .form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
+}
+.login .form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+.login .form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+.login .form-label-group input::placeholder {
+  color: transparent;
+}
+.login .form-label-group input:not(:-moz-placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+.login .form-label-group input:not(:-ms-input-placeholder) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+.login .form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+.login .form-label-group input:not(:-moz-placeholder-shown) ~ label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+.login .form-label-group input:not(:-ms-input-placeholder) ~ label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+.login .form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+.login .btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+.login .btn-facebook {
+  color: white;
+  background-color: #3b5998;
+}
+
+@media (max-width: 992px) {
+  .home-page nav .navbar-brand {
+    color: #000000 !important;
+  }
+  .home-page nav .nav-link {
+    color: #000000 !important;
+  }
+  .home-page nav .btn {
+    color: #ffffff !important;
+  }
+  .home-page .jumbotron {
+    margin-top: 0;
+    height: 400px;
+  }
+  .home-page .jumbotron form input {
+    width: 250px !important;
+  }
+  .home-page .jumbotron .display-4 {
+    font-size: 32px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+  .home-page .populer h2 {
+    font-size: 22px;
+    margin-top: -20px;
+  }
+  .home-page .populer .row .card {
+    padding: 20px 0;
+    height: 200px;
+  }
+  .home-page .populer .row .card .travel-location {
+    font-size: 10px;
+  }
+  .home-page .populer .row .card .travel-name {
+    font-size: 16px;
+  }
+  .home-page .populer .row .card a {
+    font-size: 14px;
+    padding: 5px 20px !important;
+  }
+
+  .breadcrumb-item {
+    font-size: 12px;
+  }
+
+  main {
+    min-height: 72vh;
+  }
+  main h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  main h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1px;
+  }
+  main h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  main h5 {
+    font-size: 18px;
+  }
+  main .list-wisata {
+    height: 130px;
+  }
+  main .list-wisata .card-body {
+    height: 120px;
+  }
+  main .list-wisata .card-body img {
+    width: 100px;
+    height: 100px;
+  }
+  main .list-wisata .card-body .alamat {
+    font-size: 14px;
+  }
+  main .list-wisata .card-body .btn-detail {
+    margin-top: 2px;
+    padding: 2px 10px;
+  }
+  main .card-body {
+    padding: 10px;
+  }
+  main .card-body .nama-desa {
+    font-size: 14px;
+  }
+  main .card-body .alert-info {
+    font-size: 12px;
+  }
+  main .card-body .rounded-circle {
+    width: 50px;
+  }
+  main .card-body .gallery .xzoom-container .xzoom {
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: none;
+  }
+  main .card-body .gallery .xzoom-container .xactive {
+    border: 4px solid #1abc9c;
+    box-shadow: none;
+  }
+  main .card-body .gallery .xzoom-thumbs .xzoom-gallery {
+    width: 22%;
+  }
+  main .card-body .lokasi .card {
+    position: sticky;
+    top: 20px;
+  }
+  main .card-body .struktur-lg {
+    display: none;
+  }
+  main .card-body .struktur-sm {
+    display: inline;
+  }
+}/*# sourceMappingURL=main.css.map */
