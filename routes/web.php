@@ -18,3 +18,9 @@ Route::get('/objek-wisata', 'MainController@wisata')->name('objek-wisata');
 Route::get('/keadaan-geografis', 'MainController@geografis')->name('keadaan-geografis');
 Route::get('/demografi', 'MainController@demografi')->name('demografi');
 Route::get('/struktur-pemerintahan', 'MainController@struktur')->name('struktur-pemerintahan');
+
+Route::prefix('admin')
+  ->namespace('Admin')
+  ->group(function() {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+  });
