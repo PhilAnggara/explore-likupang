@@ -21,6 +21,9 @@ Route::get('/struktur-pemerintahan', 'MainController@struktur')->name('struktur-
 
 Route::prefix('admin')
   ->namespace('Admin')
+  ->middleware(['auth', 'admin'])
   ->group(function() {
     Route::get('/', 'DashboardController@index')->name('dashboard');
   });
+
+Auth::routes();

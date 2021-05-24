@@ -20,7 +20,20 @@
             <a class="dropdown-item" href="{{ route('struktur-pemerintahan') }}">Struktur Pemerintahan</a>
           </div>
         </div>
-        <a class="nav-link btn btn-primary text-white px-3" href="login.html">MASUK</a>
+
+        @guest
+          <a class="nav-link btn btn-primary text-white px-3" href="{{ url('login') }}">MASUK</a>
+        @endguest
+        @auth
+          @if (auth()->user()->roles == 'ADMIN')
+            <a class="nav-link btn btn-outline-primary text-white px-3 mr-2" href="{{ Route('dashboard') }}">ADMIN</a>
+          @endif
+          <form action="{{ url('logout') }}" method="POST">
+            @csrf
+            <button class="nav-link btn btn-primary text-white px-3" type="submit">KELUAR</button>
+          </form>
+        @endauth
+
       </div>
     </div>
   </div>
