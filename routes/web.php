@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@index')->name('home');
+Route::get('/objek-wisata', 'MainController@wisata')->name('objek-wisata');
+Route::get('/keadaan-geografis', 'MainController@geografis')->name('keadaan-geografis');
+Route::get('/demografi', 'MainController@demografi')->name('demografi');
+Route::get('/struktur-pemerintahan', 'MainController@struktur')->name('struktur-pemerintahan');
