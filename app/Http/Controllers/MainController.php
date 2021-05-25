@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Wisata;
+use App\Models\Saran;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -31,6 +32,14 @@ class MainController extends Controller
         return view('pages.detail', [
             'item' => $item
         ]);
+    }
+
+    public function saran(Request $request)
+    {
+        $data = $request->all();
+        Saran::create($data);
+        
+        return redirect()->back();
     }
 
     public function geografis()

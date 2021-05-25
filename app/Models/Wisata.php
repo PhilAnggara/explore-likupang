@@ -31,4 +31,7 @@ class Wisata extends Model
     public function galeri(){
         return $this->hasMany(Galeri::class, 'id_wisata', 'id_wisata');
     }
+    public function saran(){
+        return $this->hasMany(Saran::class, 'id_wisata', 'id_wisata');
+    }
 }

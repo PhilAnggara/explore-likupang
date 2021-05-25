@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGaleriTable extends Migration
+class CreateSaranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateGaleriTable extends Migration
      */
     public function up()
     {
-        Schema::create('galeri', function (Blueprint $table) {
-            $table->id('id_gambar');
+        Schema::create('saran', function (Blueprint $table) {
+            $table->id('id_saran');
+            $table->foreignId('id_user');
             $table->foreignId('id_wisata');
-            $table->text('gambar');
+            $table->string('saran');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +30,6 @@ class CreateGaleriTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeri');
+        Schema::dropIfExists('saran');
     }
 }

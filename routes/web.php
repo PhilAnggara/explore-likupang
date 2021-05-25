@@ -22,6 +22,9 @@ Route::get('/objek-wisata', 'MainController@wisata')
 Route::get('/objek-wisata/{slug}', 'MainController@detail')
   ->name('detail');
 
+Route::post('/saran', 'MainController@saran')
+  ->name('kirim-saran');
+
 Route::get('/keadaan-geografis', 'MainController@geografis')
   ->name('keadaan-geografis');
 

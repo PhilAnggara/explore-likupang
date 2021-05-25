@@ -61,31 +61,30 @@
                   <!-- Saran -->
                   <div class="card-body">
                     <div class="alert alert-info" role="alert">
-                      Komentar dari orang-orang yang sudah pernah mengunjungi tempat ini
+                      Saran dari orang-orang yang sudah pernah mengunjungi tempat ini
                     </div>
-                    <div class="row">
-                      <div class="col-sm-4 mt-2">
-                        <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name=Rudolfo Sombouwadil" alt="" class="rounded-circle float-left mr-3">
-                        <h3>Rudolfo Sombouwadil</h3>
-                        <small><i>1 minggu lalu</i></small>
-                      </div>
-                      <div class="col-sm-8 saran">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, nam fugiat. Harum alias quasi cumque.</p>
-                      </div>
-                    </div><hr>
-                    <div class="row">
-                      <div class="col-sm-4 mt-2">
-                        <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name=Ticoalu Ambrosius" alt="" class="rounded-circle float-left mr-3">
-                        <h3>Ticoalu Ambrosius</h3>
-                        <small><i>2 minggu lalu</i></small>
-                      </div>
-                      <div class="col-sm-8 saran">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis soluta tempore minima veritatis mollitia id excepturi quia facilis odio perspiciatis?</p>
-                      </div>
-                    </div><hr>
-                    <form>
+                    @forelse ($item->saran as $saran)
+                      <div class="row">
+                        <div class="col-sm-4 mt-2">
+                          <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $saran->user->name }}" alt="" class="rounded-circle float-left mr-3">
+                          <h3>{{ $saran->user->name }}</h3>
+                          <small><i>{{ Carbon\Carbon::parse($saran->created_at)->diffForHumans() }}</i></small>
+                        </div>
+                        <div class="col-sm-8 saran">
+                          <p>{{ $saran->saran }}</p>
+                        </div>
+                      </div><hr>
+                    @empty
+                      <p class="text-center text-muted">Belum ada saran</p>
+                    @endforelse
+                    <form action="{{ route('kirim-saran') }}" method="POST">
+                      @csrf
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Berikan saran...">
+                        @auth
+                          <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
+                          <input type="hidden" name="id_wisata" value="{{ $item->id_wisata }}">
+                        @endauth
+                        <input type="text" name="saran" class="form-control" placeholder="Berikan saran...">
                         <div class="input-group-append">
                           <button class="btn btn-outline-primary" type="submit"><i class="far fa-paper-plane"></i></button>
                         </div>
