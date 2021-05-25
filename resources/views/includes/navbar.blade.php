@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
         <a class="nav-link mr-3" href="{{ route('home') }}">Beranda</a>
-        <a class="nav-link mr-3 {{ Request::is('objek-wisata') ? 'active' : '' }}" href="{{ route('objek-wisata') }}">Objek Wisata</a>
+        <a class="nav-link mr-3 {{ Request::is('objek-wisata*') ? 'active' : '' }}" href="{{ route('objek-wisata') }}">Objek Wisata</a>
         <div class="dropdown">
           <a class="nav-link mr-3 dropdown-toggle {{ Request::is('keadaan-geografis', 'demografi', 'struktur-pemerintahan') ? 'active' : '' }}" href="#" role="button" id="dropdownMenuLink"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

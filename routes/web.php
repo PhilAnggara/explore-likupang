@@ -13,17 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MainController@index')->name('home');
-Route::get('/objek-wisata', 'MainController@wisata')->name('objek-wisata');
-Route::get('/keadaan-geografis', 'MainController@geografis')->name('keadaan-geografis');
-Route::get('/demografi', 'MainController@demografi')->name('demografi');
-Route::get('/struktur-pemerintahan', 'MainController@struktur')->name('struktur-pemerintahan');
+Route::get('/', 'MainController@index')
+  ->name('home');
+
+Route::get('/objek-wisata', 'MainController@wisata')
+  ->name('objek-wisata');
+
+Route::get('/objek-wisata/{slug}', 'MainController@detail')
+  ->name('detail');
+
+Route::get('/keadaan-geografis', 'MainController@geografis')
+  ->name('keadaan-geografis');
+
+Route::get('/demografi', 'MainController@demografi')
+  ->name('demografi');
+  
+Route::get('/struktur-pemerintahan', 'MainController@struktur')
+  ->name('struktur-pemerintahan');
 
 Route::prefix('admin')
   ->namespace('Admin')
   ->middleware(['auth', 'admin'])
   ->group(function() {
     Route::get('/', 'DashboardController@index')->name('dashboard');
+    
+    Route::resource('data-objek-wisata', 'WisataController');
+    Route::resource('galeri', 'GaleriController');
   });
 
 Auth::routes();

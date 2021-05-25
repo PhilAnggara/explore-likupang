@@ -16,10 +16,12 @@ class CreateWisataTable extends Migration
         Schema::create('wisata', function (Blueprint $table) {
             $table->id('id_wisata');
             $table->string('nama_wisata');
+            $table->string('slug');
             $table->string('alamat');
-            $table->string('lokasi');
+            $table->longText('lokasi');
             $table->integer('jarak');
             $table->longText('deskripsi');
+            $table->boolean('populer');
             $table->timestamps();
             $table->softDeletes();
         });

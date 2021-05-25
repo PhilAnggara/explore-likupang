@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Explore Likupang')
+@section('title')
+  {{ $item->nama_wisata }} - Explore Likupang
+@endsection
 
 @section('content')
 <main>
@@ -8,34 +10,33 @@
       <div class="col-sm-8 mb-2 animate__animated animate__fadeInLeft animate__faster">
         <div class="card shadow">
           <div class="card-body">
-            <h1>Pantai Paal</h1>
+            <h1>{{ $item->nama_wisata }}</h1>
             <p class="nama-desa">
-              <i class="fas fa-map-marker-alt fa-sm text-danger"></i> Desa Marinsow
+              <i class="fas fa-map-marker-alt fa-sm text-danger"></i> Desa {{ $item->alamat }}
             </p>
-            <div class="gallery">
-              <div class="xzoom-container">
-                <img src="frontend/images/pantai-paal-1.JPG" class="xzoom" id="xzoom-default"
-                  xoriginal="frontend/images/pantai-paal-1.JPG">
+            @if ($item->galeri->count())
+              <div class="gallery">
+                <div class="xzoom-container">
+                  <img src="{{ Storage::url($item->galeri->first()->gambar) }}" class="xzoom" id="xzoom-default"
+                    xoriginal="{{ Storage::url($item->galeri->first()->gambar) }}">
+                </div>
+                <div class="xzoom-thumbs">
+                  @foreach ($item->galeri as $galeri)
+                    <a href="{{ Storage::url($galeri->gambar) }}">
+                      <img src="{{ Storage::url($galeri->gambar) }}" class="xzoom-gallery" width="128"
+                        xpreview="{{ Storage::url($galeri->gambar) }}">
+                    </a>
+                  @endforeach
+                </div>
+              </div> 
+            @else
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h1 class="text-muted text-center"><i class="far fa-image fa-lg"></i></h1>
+                  <h2 class="text-muted text-center">Belum ada gambar</h2>
+                </div>
               </div>
-              <div class="xzoom-thumbs">
-                <a href="frontend/images/pantai-paal-1.JPG">
-                  <img src="frontend/images/pantai-paal-1.JPG" class="xzoom-gallery" width="128"
-                    xpreview="frontend/images/pantai-paal-1.JPG">
-                </a>
-                <a href="frontend/images/pantai-paal-2.JPG">
-                  <img src="frontend/images/pantai-paal-2.JPG" class="xzoom-gallery" width="128"
-                    xpreview="frontend/images/pantai-paal-2.JPG">
-                </a>
-                <a href="frontend/images/pantai-paal-3.JPG">
-                  <img src="frontend/images/pantai-paal-3.JPG" class="xzoom-gallery" width="128"
-                    xpreview="frontend/images/pantai-paal-3.JPG">
-                </a>
-                <a href="frontend/images/pantai-paal-4.JPG">
-                  <img src="frontend/images/pantai-paal-4.JPG" class="xzoom-gallery" width="128"
-                    xpreview="frontend/images/pantai-paal-4.JPG">
-                </a>
-              </div>
-            </div>
+            @endif
             <nav>
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sekilas</a>
@@ -48,7 +49,9 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title mb-4"><i class="fas fa-info-circle fa-sm text-info"></i> Tentang wisata</h5>
-                    <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, dicta! Facilis est dignissimos omnis adipisci laboriosam, veniam sapiente suscipit eveniet quidem alias consectetur quaerat minus nobis quasi necessitatibus expedita culpa similique labore ipsa fugit deleniti aut quibusdam animi. Molestiae velit distinctio perferendis impedit dolores totam rerum, nobis sint veritatis, eos doloribus nulla. Repellendus reprehenderit molestiae tempore facilis illum soluta, voluptatem optio hic, modi veritatis eos commodi iste nisi dolor delectus totam praesentium id eligendi asperiores! Doloremque dignissimos voluptate aut incidunt! Veritatis, tempora! Sapiente vero error amet corporis! Suscipit, aperiam exercitationem? Maxime iure quo voluptatum consectetur veritatis praesentium, cum vero laudantium.</p>
+                    <p class="card-text text-justify">
+                      {{ $item->deskripsi }}
+                    </p>
                   </div>
                 </div>
                 <!-- End of tentang -->
@@ -102,7 +105,7 @@
             <h5 class="card-title"><i class="fas fa-map-marked-alt fa-sm text-secondary"></i> Lokasi</h5>
             <hr>
             <div class="embed-responsive embed-responsive-1by1">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11280.228508593556!2d125.15575457200369!3d1.650488130793118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3287b1bfffffffff%3A0xc6fde198deb15181!2sPantai%20Paal!5e0!3m2!1sid!2sid!4v1620828126882!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              {!! $item->lokasi !!}
             </div>
           </div>
         </div>

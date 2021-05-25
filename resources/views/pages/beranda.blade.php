@@ -32,58 +32,21 @@
   </div>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-sm-3 col-6">
-        <div class="card text-center d-flex flex-column h-scale" style="background-image: url('frontend/images/pantai-paal-1.JPG');">
-          <div class="text-uppercase">
-            <p class="travel-location">Marinsow</p>
-            <p class="travel-name">Pantai Paal</p>
-          </div>
-          <div class="travel-button mt-auto">
-            <a href="detail.html" class="btn btn-travel-details px-4">
-              Lihat Detail
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3 col-6">
-        <div class="card text-center d-flex flex-column h-scale" style="background-image: url('frontend/images/pantai-pulisan-1.JPG');">
-          <div class="text-uppercase">
-            <p class="travel-location">Pulisan</p>
-            <p class="travel-name">Pantai Pulisan</p>
-          </div>
-          <div class="travel-button mt-auto">
-            <a href="detail.html" class="btn btn-travel-details px-4">
-              Lihat Detail
-            </a>
+      @foreach ($items as $item)
+        <div class="col-sm-3 col-6">
+          <div class="card text-center d-flex flex-column h-scale" style="background-image: url('{{ $item->galeri->count() ? Storage::url($item->galeri->first()->gambar) : '' }}');">
+            <div class="text-uppercase">
+              <p class="travel-location">{{ $item->alamat }}</p>
+              <p class="travel-name">{{ $item->nama_wisata }}</p>
+            </div>
+            <div class="travel-button mt-auto">
+              <a href="{{ Route('detail', $item->slug) }}" class="btn btn-travel-details px-4">
+                Lihat Detail
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3 col-6">
-        <div class="card text-center d-flex flex-column h-scale" style="background-image: url('frontend/images/bukit-larata-1.JPG');">
-          <div class="text-uppercase">
-            <p class="travel-location">Kinunang</p>
-            <p class="travel-name">Bukit Larata</p>
-          </div>
-          <div class="travel-button mt-auto">
-            <a href="detail.html" class="btn btn-travel-details px-4">
-              Lihat Detail
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3 col-6">
-        <div class="card text-center d-flex flex-column h-scale" style="background-image: url('frontend/images/puncak-pulisan-1.JPG');">
-          <div class="text-uppercase">
-            <p class="travel-location">Pulisan</p>
-            <p class="travel-name">Puncak Pulisan</p>
-          </div>
-          <div class="travel-button mt-auto">
-            <a href="detail.html" class="btn btn-travel-details px-4">
-              Lihat Detail
-            </a>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
