@@ -14,7 +14,8 @@
   <li class="nav-item {{ Request::is('admin') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('dashboard') }}">
       <i class="fas fa-fw fa-home"></i>
-      <span>Beranda</span></a>
+      <span>Beranda</span>
+    </a>
   </li>
 
   <!-- Divider -->
@@ -23,22 +24,29 @@
   <li class="nav-item {{ Request::is('admin/data-objek-wisata*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('data-objek-wisata.index') }}">
       <i class="fas fa-fw fa-map-marked-alt"></i>
-      <span>Objek Wisata</span></a>
+      <span>Objek Wisata</span>
+    </a>
   </li>
   <li class="nav-item {{ Request::is('admin/saran') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('dashboard') }}">
       <i class="fas fa-fw fa-comment-alt"></i>
-      <span>Saran</span></a>
+      <span>Saran</span>
+      @if ($saran->isNotEmpty())  
+        <span class="badge badge-danger my-badge">{{ $saran->count() }}</span>
+      @endif
+    </a>
   </li>
   <li class="nav-item {{ Request::is('admin/laporan') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('dashboard') }}">
       <i class="fas fa-fw fa-file-alt"></i>
-      <span>Laporan</span></a>
+      <span>Laporan</span>
+    </a>
   </li>
   <li class="nav-item {{ Request::is('admin/pengguna') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('dashboard') }}">
       <i class="fas fa-fw fa-users"></i>
-      <span>Pengguna</span></a>
+      <span>Pengguna</span>
+    </a>
   </li>
 
   <!-- Divider -->

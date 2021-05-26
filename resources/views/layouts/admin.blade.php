@@ -20,7 +20,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    @include('includes.admin.sidebar')
+    @include('includes.admin.sidebar', ['saran' => App\Models\Saran::all()])
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">

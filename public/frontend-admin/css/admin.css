@@ -10134,6 +10134,13 @@ a:focus {
   right: .25rem;
   margin-top: -.25rem;
 }
+.sidebar .nav-item .nav-link .my-badge {
+  position: absolute;
+  transform: scale(0.7);
+  transform-origin: top right;
+  top: 1rem;
+  margin-top: -.25rem;
+}
 
 .sidebar .nav-item .nav-link .img-profile,
 .topbar .nav-item .nav-link .img-profile {
