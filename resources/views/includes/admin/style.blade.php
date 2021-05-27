@@ -8,3 +8,4 @@
 
 <!-- Custom styles -->
 <link href="{{ url('frontend-admin/css/admin.css') }}" rel="stylesheet">
+<link href="{{ url('frontend-admin/css/new-style.css') }}" rel="stylesheet">

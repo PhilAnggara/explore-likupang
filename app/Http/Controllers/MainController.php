@@ -26,7 +26,7 @@ class MainController extends Controller
 
     public function detail(Request $request, $slug)
     {
-        $item = Wisata::with(['galeri'])
+        $item = Wisata::with(['galeri','saran'])
             ->where('slug', $slug)
             ->firstOrFail();
         return view('pages.detail', [
@@ -37,6 +37,7 @@ class MainController extends Controller
     public function saran(Request $request)
     {
         $data = $request->all();
+        
         Saran::create($data);
         
         return redirect()->back();

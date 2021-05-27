@@ -56,9 +56,100 @@
         </div>
 
         <div class="col-12">
-          <div class="card border-left-prim shadow h-100 py-2">
-            <div class="card-body">
-              {{ $item->deskripsi }}
+          <div class="card border-left-prim shadow h-100">
+            <div class="card-body p-0">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sekilas</a>
+                  <a class="nav-link" id="nav-wahana-tab" data-toggle="tab" href="#nav-wahana" role="tab" aria-controls="nav-wahana" aria-selected="false">Wahana</a>
+                  <a class="nav-link" id="nav-kegiatan-tab" data-toggle="tab" href="#nav-kegiatan" role="tab" aria-controls="nav-kegiatan" aria-selected="false">Kegiatan</a>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <!-- Tentang -->
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title text-dark mb-4"><i class="fas fa-info-circle fa-sm text-info"></i> Tentang wisata</h5>
+                      <p class="card-text text-justify">
+                        {{ $item->deskripsi }}
+                      </p>
+                    </div>
+                  </div>
+                  <!-- End of tentang -->
+                </div>
+                <div class="tab-pane fade" id="nav-wahana" role="tabpanel" aria-labelledby="nav-wahana-tab">
+                  <!-- Wahana -->
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-sm-flex align-items-start justify-content-between">
+                        <h5 class="card-title text-dark mb-4 d-inline-block"><i class="fas fa-swimmer fa-sm text-info"></i> Wahana yang tersedia</h5>
+                        <button type="button" class="btn btn-sm btn-success shadow-sm d-inline-block" data-toggle="modal" data-target="#tambahWahanaModal">
+                          <i class="fas fa-plus fa-sm"></i> Tambah Wahana
+                        </button>
+                      </div>
+                      <ul class="list-unstyled">
+                        <hr class="mt-0 mb-2">
+                        <li class="media">
+                          <a href="" data-toggle="modal" data-target="#gambarWahanaModal">
+                            <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                          </a>
+                          <div class="media-body">
+                            <h5 class="mt-0 mb-1 text-dark">Banana Boat <small class="float-right text-primary">Rp 50.000 / Org</small></h5>
+                            <p class="text-muted">
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                            </p>
+                          </div>
+                        </li>
+                        <hr class="mt-0 mb-2">
+                        <li class="media">
+                          <a href="" data-toggle="modal" data-target="#gambarWahanaModal">
+                            <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                          </a>
+                          <div class="media-body">
+                            <h5 class="mt-0 mb-1 text-dark">Jet Ski <small class="float-right text-primary">Rp 50.000 / Org</small></h5>
+                            <p class="text-muted">
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- End of wahana -->
+                </div>
+                <div class="tab-pane fade" id="nav-kegiatan" role="tabpanel" aria-labelledby="nav-kegiatan-tab">
+                  <!-- Kegiatan -->
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-sm-flex align-items-start justify-content-between">
+                        <h5 class="card-title text-dark mb-4 d-inline-block"><i class="far fa-calendar-alt fa-sm text-info"></i> Kegiatan yang pernah dilakukan</h5>
+                        <button type="button" class="btn btn-sm btn-success shadow-sm d-inline-block" data-toggle="modal" data-target="#tambahKegiatanModal">
+                          <i class="fas fa-plus fa-sm"></i> Tambah Kegiatan
+                        </button>
+                      </div>
+                      <ul class="list-unstyled">
+                        <hr class="mt-0 mb-2">
+                        <li class="media">
+                          <a href="" data-toggle="modal" data-target="#gambarKegiatanModal">
+                            <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                          </a>
+                          <div class="media-body">
+                            <p class="mt-0 mb-1 font-weight-bold text-dark">
+                              Kunjungan Menteri Pariwisata
+                              <small class="float-right text-secondary">1 Maret 2021</small>
+                            </p>
+                            <p class="text-muted">
+                              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- End of kegiatan -->
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -82,35 +173,7 @@
 
 </div>
 
-<!-- Modal tambah data -->
-<div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="tambahModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="tambahModalLabel">Tambah Gambar</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form action="{{ Route('galeri.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="modal-body">
-
-          <div class="custom-file">
-            <input type="hidden" name="id_wisata" value="{{ $item->id_wisata }}">
-            <input type="file" class="custom-file-input" id="gambar" name="gambar">
-            <label class="custom-file-label" for="gambar">Pilih Gambar</label>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-          <button type="submit" class="btn btn-primary">Tambah</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+@include('includes.admin.modal-data-wisata')
 
 @endsection
 @push('addon-script')

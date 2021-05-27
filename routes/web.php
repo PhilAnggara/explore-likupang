@@ -22,7 +22,7 @@ Route::get('/objek-wisata', 'MainController@wisata')
 Route::get('/objek-wisata/{slug}', 'MainController@detail')
   ->name('detail');
 
-Route::post('/saran', 'MainController@saran')
+Route::post('/kirim-saran', 'MainController@saran')
   ->name('kirim-saran');
 
 Route::get('/keadaan-geografis', 'MainController@geografis')
@@ -42,6 +42,8 @@ Route::prefix('admin')
     
     Route::resource('data-objek-wisata', 'WisataController');
     Route::resource('galeri', 'GaleriController');
+    Route::resource('saran', 'SaranController');
+    Route::resource('pengguna', 'PenggunaController');
   });
 
 Auth::routes();

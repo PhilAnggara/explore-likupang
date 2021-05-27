@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Saran;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class SaranController extends Controller
+class PenggunaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,11 @@ class SaranController extends Controller
      */
     public function index()
     {
-        $items = Saran::all();
+        $items = User::where('roles', 'USER')->get();
 
-        return view('pages.admin.data-saran', compact('items'));
+        return view('pages.admin.data-pengguna', [
+            'items' => $items
+        ]);
     }
 
     /**

@@ -41,6 +41,8 @@
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sekilas</a>
                 <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Saran</a>
+                <a class="nav-link" id="nav-wahana-tab" data-toggle="tab" href="#nav-wahana" role="tab" aria-controls="nav-wahana" aria-selected="false">Wahana</a>
+                <a class="nav-link" id="nav-kegiatan-tab" data-toggle="tab" href="#nav-kegiatan" role="tab" aria-controls="nav-kegiatan" aria-selected="false">Kegiatan</a>
               </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
@@ -68,7 +70,9 @@
                         <div class="col-sm-4 mt-2">
                           <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $saran->user->name }}" alt="" class="rounded-circle float-left mr-3">
                           <h3>{{ $saran->user->name }}</h3>
-                          <small><i>{{ Carbon\Carbon::parse($saran->created_at)->diffForHumans() }}</i></small>
+                          <small>
+                            <i>{{ Carbon\Carbon::parse($saran->created_at)->diffForHumans() }}</i>
+                          </small>
                         </div>
                         <div class="col-sm-8 saran">
                           <p>{{ $saran->saran }}</p>
@@ -93,6 +97,61 @@
                   </div>
                   <!-- End of saran -->
                 </div>
+              </div>
+              <div class="tab-pane fade" id="nav-wahana" role="tabpanel" aria-labelledby="nav-wahana-tab">
+                <!-- Wahana -->
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title mb-4"><i class="fas fa-swimmer fa-sm text-info"></i> Wahana yang tersedia</h5>
+                    <ul class="list-unstyled">
+                      <hr>
+                      <li class="media">
+                        <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                        <div class="media-body">
+                          <h5 class="mt-0 mb-1">Banana Boat <small class="float-right text-primary">Rp 50.000 / Org</small></h5>
+                          <p class="text-muted">
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                          </p>
+                        </div>
+                      </li>
+                      <hr>
+                      <li class="media">
+                        <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                        <div class="media-body">
+                          <h5 class="mt-0 mb-1">Jet Ski <small class="float-right text-primary">Rp 50.000 / Org</small></h5>
+                          <p class="text-muted">
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- End of wahana -->
+              </div>
+              <div class="tab-pane fade" id="nav-kegiatan" role="tabpanel" aria-labelledby="nav-kegiatan-tab">
+                <!-- Kegiatan -->
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title mb-4"><i class="far fa-calendar-alt fa-sm text-info"></i> Kegiatan yang pernah dilakukan disini</h5>
+                    <ul class="list-unstyled">
+                      <hr>
+                      <li class="media">
+                        <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                        <div class="media-body">
+                          <p class="mt-0 mb-1 font-weight-bold">
+                            Kunjungan Menteri Pariwisata
+                            <small class="float-right text-secondary">1 Maret 2021</small>
+                          </p>
+                          <p class="text-muted">
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- End of kegiatan -->
               </div>
             </div>
           </div>

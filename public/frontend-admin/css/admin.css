@@ -9870,11 +9870,6 @@ a:focus {
   background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
   background-size: cover;
 }
-.bg-gradient-prim {
-  background-color: #4e73df;
-  background-image: linear-gradient(180deg, #06beb6 10%, #1092a3 100%);
-  background-size: cover;
-}
 
 .bg-gradient-secondary {
   background-color: #858796;
@@ -10014,9 +10009,6 @@ a:focus {
 .border-left-primary {
   border-left: 0.25rem solid #4e73df !important;
 }
-.border-left-prim {
-  border-left: 0.25rem solid #06beb6 !important;
-}
 
 .border-bottom-primary {
   border-bottom: 0.25rem solid #4e73df !important;
@@ -10132,13 +10124,6 @@ a:focus {
   transform: scale(0.7);
   transform-origin: top right;
   right: .25rem;
-  margin-top: -.25rem;
-}
-.sidebar .nav-item .nav-link .my-badge {
-  position: absolute;
-  transform: scale(0.7);
-  transform-origin: top right;
-  top: 1rem;
   margin-top: -.25rem;
 }
 

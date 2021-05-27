@@ -28,12 +28,10 @@
     </a>
   </li>
   <li class="nav-item {{ Request::is('admin/saran') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ Route('dashboard') }}">
+    <a class="nav-link" href="{{ Route('saran.index') }}">
       <i class="fas fa-fw fa-comment-alt"></i>
       <span>Saran</span>
-      @if ($saran->isNotEmpty())  
-        <span class="badge badge-danger my-badge">{{ $saran->count() }}</span>
-      @endif
+      <livewire:notifikasi />
     </a>
   </li>
   <li class="nav-item {{ Request::is('admin/laporan') ? 'active' : '' }}">
@@ -43,7 +41,7 @@
     </a>
   </li>
   <li class="nav-item {{ Request::is('admin/pengguna') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ Route('dashboard') }}">
+    <a class="nav-link" href="{{ Route('pengguna.index') }}">
       <i class="fas fa-fw fa-users"></i>
       <span>Pengguna</span>
     </a>

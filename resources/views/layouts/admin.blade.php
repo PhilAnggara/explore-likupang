@@ -13,6 +13,8 @@
   @include('includes.admin.style')
   @stack('addon-style')
 
+  @livewireStyles
+
 </head>
 
 <body id="page-top">
@@ -20,7 +22,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    @include('includes.admin.sidebar', ['saran' => App\Models\Saran::all()])
+    @include('includes.admin.sidebar')
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -48,6 +50,8 @@
   @stack('prepend-script')
   @include('includes.admin.script')
   @stack('addon-script')
+
+  @livewireScripts
 
 </body>
 </html>

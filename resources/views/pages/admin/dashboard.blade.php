@@ -16,7 +16,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-prim text-uppercase mb-1">Objek Wisata</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">7</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $wisata }}</div>
             </div>
             <div class="col-auto">
               <i class="fas fa-map-marked-alt fa-2x text-gray-300"></i>
@@ -32,7 +32,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-prim text-uppercase mb-1">Pengguna</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">98</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $user }}</div>
             </div>
             <div class="col-auto">
               <i class="fas fa-users fa-2x text-gray-300"></i>

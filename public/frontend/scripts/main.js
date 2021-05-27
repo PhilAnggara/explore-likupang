@@ -1,7 +1,7 @@
 $(document).ready( function () {
 
   // DataTable
-  $('.dataTable').DataTable();
+  // $('.dataTable').DataTable();
 
   // xZoom
   $('.xzoom, .xzoom-gallery').xzoom({

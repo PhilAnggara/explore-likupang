@@ -4,10 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class Notifiikasi extends Component
+class Saran extends Component
 {
     public function render()
     {
-        return view('livewire.notifiikasi');
+        return view('livewire.saran');
     }
 }
