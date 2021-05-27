@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Wisata;
 use App\Models\Saran;
+use App\Models\Wahana;
+use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -26,7 +28,7 @@ class MainController extends Controller
 
     public function detail(Request $request, $slug)
     {
-        $item = Wisata::with(['galeri','saran'])
+        $item = Wisata::with(['galeri','saran','wahana','kegiatan'])
             ->where('slug', $slug)
             ->firstOrFail();
         return view('pages.detail', [

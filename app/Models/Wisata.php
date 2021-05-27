@@ -34,4 +34,10 @@ class Wisata extends Model
     public function saran(){
         return $this->hasMany(Saran::class, 'id_wisata', 'id_wisata');
     }
+    public function wahana(){
+        return $this->hasMany(Wahana::class, 'id_wisata', 'id_wisata');
+    }
+    public function kegiatan(){
+        return $this->hasMany(Kegiatan::class, 'id_wisata', 'id_wisata');
+    }
 }

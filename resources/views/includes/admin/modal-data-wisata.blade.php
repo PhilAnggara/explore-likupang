@@ -38,27 +38,31 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{ Route('galeri.store') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ Route('wahana.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="modal-body">
 
           <div class="form-group">
-            <label for="nama">Nama Wahana</label>
-            <input type="text" class="form-control" id="nama" name="nama" required>
+            <label for="nama_wahana">Nama Wahana</label>
+            <input type="text" class="form-control" id="nama_wahana" name="nama_wahana" required>
             <input type="hidden" name="id_wisata" value="{{ $item->id_wisata }}">
+          </div>
+          <div class="form-group">
+            <label for="harga">Harga / Orang</label>
+            <input type="number" class="form-control" id="harga" name="harga" required>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="gambara">Gambar 1</label>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="gambara" name="gambara">
+                <input type="file" class="custom-file-input" id="gambara" name="gambara" required>
                 <label class="custom-file-label" for="gambara">Pilih Gambar</label>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="gambarb">Gambar 2</label>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="gambarb" name="gambarb">
+                <input type="file" class="custom-file-input" id="gambarb" name="gambarb" required>
                 <label class="custom-file-label" for="gambarb">Pilih Gambar</label>
               </div>
             </div>
@@ -88,43 +92,47 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{ Route('galeri.store') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ Route('kegiatan.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="modal-body">
 
           <div class="form-group">
-            <label for="nama">Nama Kegiatan</label>
-            <input type="text" class="form-control" id="nama" name="nama" required>
+            <label for="nama_kegiatan">Nama Kegiatan</label>
+            <input type="text" class="form-control" id="nama_kegiatan" name="nama_kegiatan" required>
             <input type="hidden" name="id_wisata" value="{{ $item->id_wisata }}">
+          </div>
+          <div class="form-group">
+            <label for="tanggal">Tanggal Kegiatan</label>
+            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="gambara">Gambar 1</label>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="gambara" name="gambara">
+                <input type="file" class="custom-file-input" id="gambara" name="gambara" required>
                 <label class="custom-file-label" for="gambara">Pilih Gambar</label>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="gambarb">Gambar 2</label>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="gambarb" name="gambarb">
+                <input type="file" class="custom-file-input" id="gambarb" name="gambarb" required>
                 <label class="custom-file-label" for="gambarb">Pilih Gambar</label>
               </div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="gambarc">Gambar 1</label>
+              <label for="gambarc">Gambar 3</label>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="gambarc" name="gambarc">
+                <input type="file" class="custom-file-input" id="gambarc" name="gambarc" required>
                 <label class="custom-file-label" for="gambarc">Pilih Gambar</label>
               </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="gambard">Gambar 2</label>
+              <label for="gambard">Gambar 4</label>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="gambard" name="gambard">
+                <input type="file" class="custom-file-input" id="gambard" name="gambard" required>
                 <label class="custom-file-label" for="gambard">Pilih Gambar</label>
               </div>
             </div>
@@ -144,7 +152,7 @@
   </div>
 </div>
 
-<!-- Modal tambah wahana -->
+<!-- Modal gambar wahana -->
 <div class="modal fade" id="gambarWahanaModal" tabindex="-1" aria-labelledby="gambarWahanaModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">

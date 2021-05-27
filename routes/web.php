@@ -42,6 +42,8 @@ Route::prefix('admin')
     
     Route::resource('data-objek-wisata', 'WisataController');
     Route::resource('galeri', 'GaleriController');
+    Route::resource('wahana', 'WahanaController');
+    Route::resource('kegiatan', 'KegiatanController');
     Route::resource('saran', 'SaranController');
     Route::resource('pengguna', 'PenggunaController');
   });

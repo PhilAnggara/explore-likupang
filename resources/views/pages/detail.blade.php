@@ -104,26 +104,24 @@
                   <div class="card-body">
                     <h5 class="card-title mb-4"><i class="fas fa-swimmer fa-sm text-info"></i> Wahana yang tersedia</h5>
                     <ul class="list-unstyled">
-                      <hr>
-                      <li class="media">
-                        <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
-                        <div class="media-body">
-                          <h5 class="mt-0 mb-1">Banana Boat <small class="float-right text-primary">Rp 50.000 / Org</small></h5>
-                          <p class="text-muted">
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                          </p>
-                        </div>
-                      </li>
-                      <hr>
-                      <li class="media">
-                        <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
-                        <div class="media-body">
-                          <h5 class="mt-0 mb-1">Jet Ski <small class="float-right text-primary">Rp 50.000 / Org</small></h5>
-                          <p class="text-muted">
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                          </p>
-                        </div>
-                      </li>
+                      @forelse ($item->wahana as $wahana)
+                        <hr>
+                        <li class="media">
+                          <a href="" data-toggle="modal" data-target="#gambarWahanaModal">
+                              <img src="{{ Storage::url($wahana->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                            </a>
+                          <div class="media-body">
+                            <h5 class="mt-0 mb-1">{{ $wahana->nama_wahana }} <small class="float-right text-primary">
+                              Rp {{ number_format($wahana->harga, 0, ',', '.') }} / Org
+                            </small></h5>
+                            <p class="text-muted">
+                              {{ $wahana->deskripsi }}
+                            </p>
+                          </div>
+                        </li>
+                      @empty
+                        <p class="text-center text-muted">Belum ada wahana</p>
+                      @endforelse
                     </ul>
                   </div>
                 </div>
@@ -135,19 +133,27 @@
                   <div class="card-body">
                     <h5 class="card-title mb-4"><i class="far fa-calendar-alt fa-sm text-info"></i> Kegiatan yang pernah dilakukan disini</h5>
                     <ul class="list-unstyled">
-                      <hr>
-                      <li class="media">
-                        <img src="{{ Storage::url($item->galeri->first()->gambar) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
-                        <div class="media-body">
-                          <p class="mt-0 mb-1 font-weight-bold">
-                            Kunjungan Menteri Pariwisata
-                            <small class="float-right text-secondary">1 Maret 2021</small>
-                          </p>
-                          <p class="text-muted">
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                          </p>
-                        </div>
-                      </li>
+                      @forelse ($item->kegiatan as $kegiatan)
+                        <hr>
+                        <li class="media">
+                          <a href="" data-toggle="modal" data-target="#gambarKegiatanModal">
+                            <img src="{{ Storage::url($kegiatan->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                          </a>
+                          <div class="media-body">
+                            <p class="mt-0 mb-1 font-weight-bold">
+                              {{ $kegiatan->nama_kegiatan }}
+                              <small class="float-right text-secondary">
+                                {{ Carbon\Carbon::parse($item->tanggal)->isoFormat('D MMMM YYYY') }}
+                              </small>
+                            </p>
+                            <p class="text-muted">
+                              {{ $kegiatan->deskripsi }}
+                            </p>
+                          </div>
+                        </li>
+                      @empty
+                        <p class="text-center text-muted">Belum ada kegiatan</p>
+                      @endforelse
                     </ul>
                   </div>
                 </div>
@@ -171,6 +177,9 @@
     </div>
   </div>
 </main>
+
+@include('includes.modal-wisata')
+
 @endsection
 
 @push('addon-script')
