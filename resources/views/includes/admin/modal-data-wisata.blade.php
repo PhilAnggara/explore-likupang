@@ -165,11 +165,11 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-sm-6">            
-            <img src="{{ Storage::url($wahana->gambara) }}" class="img-fluid border border-secondary rounded-lg mb-3 mb-sm-0">
+          <div class="col-sm-6 mb-3 mb-sm-0">            
+            <img src="{{ Storage::url($wahana->gambara) }}" class="modal-gambar border border-secondary rounded-lg">
           </div>
           <div class="col-sm-6">            
-            <img src="{{ Storage::url($wahana->gambarb) }}" class="img-fluid border border-secondary rounded-lg">
+            <img src="{{ Storage::url($wahana->gambarb) }}" class="modal-gambar border border-secondary rounded-lg">
           </div>
         </div>
       </div>
@@ -191,17 +191,17 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-sm-6">            
-            <img src="{{ Storage::url($kegiatan->gambara) }}" class="img-fluid border border-secondary rounded-lg mb-3">
+          <div class="col-sm-6 mb-4">            
+            <img src="{{ Storage::url($kegiatan->gambara) }}" class="modal-gambar border border-secondary rounded-lg">
+          </div>
+          <div class="col-sm-6 mb-4">            
+            <img src="{{ Storage::url($kegiatan->gambarb) }}" class="modal-gambar border border-secondary rounded-lg">
+          </div>
+          <div class="col-sm-6 mb-4 mb-sm-0">            
+            <img src="{{ Storage::url($kegiatan->gambarc) }}" class="modal-gambar border border-secondary rounded-lg">
           </div>
           <div class="col-sm-6">            
-            <img src="{{ Storage::url($kegiatan->gambarb) }}" class="img-fluid border border-secondary rounded-lg mb-3">
-          </div>
-          <div class="col-sm-6">            
-            <img src="{{ Storage::url($kegiatan->gambarc) }}" class="img-fluid border border-secondary rounded-lg mb-3 mb-sm-0">
-          </div>
-          <div class="col-sm-6">            
-            <img src="{{ Storage::url($kegiatan->gambard) }}" class="img-fluid border border-secondary rounded-lg">
+            <img src="{{ Storage::url($kegiatan->gambard) }}" class="modal-gambar border border-secondary rounded-lg">
           </div>
         </div>
       </div>

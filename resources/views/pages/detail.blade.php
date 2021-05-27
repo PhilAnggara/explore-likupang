@@ -187,6 +187,10 @@
     img {
       object-fit: cover
     }
+    .modal-gambar {
+      width: 100%;
+      height: 100%;
+    }
   </style>
 @endpush
 
