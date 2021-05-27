@@ -107,8 +107,8 @@
                       @forelse ($item->wahana as $wahana)
                         <hr>
                         <li class="media">
-                          <a href="" data-toggle="modal" data-target="#gambarWahanaModal">
-                              <img src="{{ Storage::url($wahana->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                          <a href="" data-toggle="modal" data-target="#gambarWahanaModal-{{ $wahana->id_wahana }}">
+                              <img src="{{ Storage::url($wahana->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg border border-secondary" alt="...">
                             </a>
                           <div class="media-body">
                             <h5 class="mt-0 mb-1">{{ $wahana->nama_wahana }} <small class="float-right text-primary">
@@ -136,8 +136,8 @@
                       @forelse ($item->kegiatan as $kegiatan)
                         <hr>
                         <li class="media">
-                          <a href="" data-toggle="modal" data-target="#gambarKegiatanModal">
-                            <img src="{{ Storage::url($kegiatan->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                          <a href="" data-toggle="modal" data-target="#gambarKegiatanModal-{{ $kegiatan->id_kegiatan }}">
+                            <img src="{{ Storage::url($kegiatan->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg border border-secondary" alt="...">
                           </a>
                           <div class="media-body">
                             <p class="mt-0 mb-1 font-weight-bold">
@@ -181,6 +181,14 @@
 @include('includes.modal-wisata')
 
 @endsection
+
+@push('addon-style')
+  <style>
+    img {
+      object-fit: cover
+    }
+  </style>
+@endpush
 
 @push('addon-script')
   <script>

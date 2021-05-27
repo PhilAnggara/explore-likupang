@@ -92,8 +92,8 @@
                         @forelse ($item->wahana as $wahana)
                           <hr class="mt-0 mb-2">
                           <li class="media">
-                            <a href="" data-toggle="modal" data-target="#gambarWahanaModal">
-                              <img src="{{ Storage::url($wahana->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                            <a href="" data-toggle="modal" data-target="#gambarWahanaModal-{{ $wahana->id_wahana }}">
+                              <img src="{{ Storage::url($wahana->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg border border-secondary" alt="...">
                             </a>
                             <div class="media-body">
                               <h5 class="mt-0 mb-1 text-dark">{{ $wahana->nama_wahana }} <small class="float-right text-primary">Rp {{ number_format($wahana->harga, 0, ',', '.') }} / Org</small></h5>
@@ -124,8 +124,8 @@
                         @forelse ($item->kegiatan as $kegiatan)                            
                           <hr class="mt-0 mb-2">
                           <li class="media">
-                            <a href="" data-toggle="modal" data-target="#gambarKegiatanModal">
-                              <img src="{{ Storage::url($kegiatan->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg" alt="...">
+                            <a href="" data-toggle="modal" data-target="#gambarKegiatanModal-{{ $kegiatan->id_kegiatan }}">
+                              <img src="{{ Storage::url($kegiatan->gambara) }}" height="80px" width="80px" class="mr-3 rounded-lg border border-secondary" alt="...">
                             </a>
                             <div class="media-body">
                               <p class="mt-0 mb-1 font-weight-bold text-dark">
@@ -172,6 +172,14 @@
 </div>
 
 @include('includes.admin.modal-data-wisata')
+
+@push('addon-style')
+  <style>
+    img {
+      object-fit: cover
+    }
+  </style>
+@endpush
 
 @endsection
 @push('addon-script')
