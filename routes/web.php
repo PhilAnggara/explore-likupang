@@ -45,6 +45,7 @@ Route::prefix('admin')
     Route::resource('wahana', 'WahanaController');
     Route::resource('kegiatan', 'KegiatanController');
     Route::resource('saran', 'SaranController');
+    Route::resource('laporan', 'LaporanController');
     Route::resource('pengguna', 'PenggunaController');
   });
 

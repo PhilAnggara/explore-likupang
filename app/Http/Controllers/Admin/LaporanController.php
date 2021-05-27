@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Saran;
+use App\Http\Requests\Admin\WisataRequest;
+use App\Models\Wisata;
 use Illuminate\Http\Request;
 
-class SaranController extends Controller
+class LaporanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,11 @@ class SaranController extends Controller
      */
     public function index()
     {
-        $items = Saran::orderByDesc('id_saran')->get();
-
-        return view('pages.admin.data-saran', compact('items'));
+        $items = Wisata::all();
+        
+        return view('pages.admin.laporan', [
+            'items' => $items
+        ]);
     }
 
     /**

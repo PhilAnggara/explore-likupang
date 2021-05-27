@@ -31,11 +31,10 @@
     <a class="nav-link" href="{{ Route('saran.index') }}">
       <i class="fas fa-fw fa-comment-alt"></i>
       <span>Saran</span>
-      <livewire:notifikasi />
     </a>
   </li>
   <li class="nav-item {{ Request::is('admin/laporan') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ Route('dashboard') }}">
+    <a class="nav-link" href="{{ Route('laporan.index') }}">
       <i class="fas fa-fw fa-file-alt"></i>
       <span>Laporan</span>
     </a>

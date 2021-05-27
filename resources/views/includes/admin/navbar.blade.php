@@ -1,3 +1,14 @@
+@php
+  $items = App\Models\Saran::orderByDesc('id_saran')->limit(3)->get();
+  $counter =  App\Models\Saran::all()->count();
+
+  if ( $counter >= 3 ) {
+    $count = '3+';
+  } else {
+    $count = $counter;
+  }
+@endphp
+
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
   <!-- Sidebar Toggle (Topbar) -->
@@ -8,54 +19,40 @@
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
 
-    {{-- <!-- Nav Item - Alerts -->
+    <!-- Nav Item - Alerts -->
     <li class="nav-item dropdown no-arrow mx-1">
       <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-bell fa-fw"></i>
         <!-- Counter - Alerts -->
-        <span class="badge badge-danger badge-counter">3+</span>
+        <span class="badge badge-danger badge-counter">{{ $count }}</span>
       </a>
       <!-- Dropdown - Alerts -->
       <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
         <h6 class="dropdown-header">
-          Alerts Center
+          Notifikasi saran masuk
         </h6>
-        <a class="dropdown-item d-flex align-items-center" href="#">
-          <div class="mr-3">
-            <div class="icon-circle bg-primary">
-              <i class="fas fa-file-alt text-white"></i>
+        @forelse ($items as $item)
+          <a class="dropdown-item d-flex align-items-center" href="{{ Route('saran.index') }}">
+            <div class="mr-3">
+              <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $item->user->name }}" class="rounded-circle float-left" width="40px">
             </div>
-          </div>
-          <div>
-            <div class="small text-gray-500">December 12, 2019</div>
-            <span class="font-weight-bold">A new monthly report is ready to download!</span>
-          </div>
-        </a>
-        <a class="dropdown-item d-flex align-items-center" href="#">
-          <div class="mr-3">
-            <div class="icon-circle bg-success">
-              <i class="fas fa-donate text-white"></i>
+            <div>
+              <div class="small text-gray-500">
+                {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM YYYY') }}
+              </div>
+              <span class="font-weight-bold">{{ Str::limit($item->saran, 50) }}</span>
             </div>
-          </div>
-          <div>
-            <div class="small text-gray-500">December 7, 2019</div>
-            $290.29 has been deposited into your account!
-          </div>
-        </a>
-        <a class="dropdown-item d-flex align-items-center" href="#">
-          <div class="mr-3">
-            <div class="icon-circle bg-warning">
-              <i class="fas fa-exclamation-triangle text-white"></i>
-            </div>
-          </div>
-          <div>
-            <div class="small text-gray-500">December 2, 2019</div>
-            Spending Alert: We've noticed unusually high spending for your account.
-          </div>
-        </a>
-        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+          </a>
+        @empty
+          <p class="text-center my-5">Belum ada notifikasi</p>
+        @endforelse
+        @if ( $counter >= 3 )
+          <a class="dropdown-item text-center small text-gray-500" href="{{ Route('saran.index') }}">
+            Tampilkan Semua
+          </a>
+        @endif
       </div>
-    </li> --}}
+    </li>
 
     <div class="topbar-divider d-none d-sm-block"></div>
 
