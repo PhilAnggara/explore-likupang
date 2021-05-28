@@ -1,5 +1,5 @@
 @php
-  $items = App\Models\Saran::orderByDesc('id_saran')->limit(3)->get();
+  $notifikasi = App\Models\Saran::orderByDesc('id_saran')->limit(3)->get();
   $counter =  App\Models\Saran::all()->count();
 
   if ( $counter >= 3 ) {
@@ -31,7 +31,7 @@
         <h6 class="dropdown-header">
           Notifikasi saran masuk
         </h6>
-        @forelse ($items as $item)
+        @forelse ($notifikasi as $item)
           <a class="dropdown-item d-flex align-items-center" href="{{ Route('saran.index') }}">
             <div class="mr-3">
               <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $item->user->name }}" class="rounded-circle float-left" width="40px">
