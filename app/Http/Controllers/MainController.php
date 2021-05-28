@@ -8,6 +8,8 @@ use App\Models\Wahana;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
+use App\Events\SaranDitambahkan;
+
 class MainController extends Controller
 {
     public function index()
@@ -44,6 +46,15 @@ class MainController extends Controller
         
         return redirect()->back();
     }
+    // public function saran(Request $request)
+    // {
+    //     $data = $request->all();
+        
+    //     event(new SaranDitambahkan($data));
+    //     dd($data);
+        
+    //     return redirect()->back();
+    // }
 
     public function geografis()
     {

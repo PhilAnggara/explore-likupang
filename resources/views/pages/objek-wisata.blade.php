@@ -17,7 +17,7 @@
                   <h2>{{ $item->nama_wisata }}</h2>
                   <div class="text-center-sm">
                     <p class="alamat"><i class="fas fa-map-marker-alt fa-sm text-danger"></i> Desa {{ $item->alamat }}</p>
-                    <p class="jarak"><i class="fas fa-road fa-sm text-secondary"></i> {{ $item->jarak }} Km dari Manado</p>
+                    <p class="jarak"><i class="fas fa-road fa-sm text-secondary"></i> {{ $item->jarak }} Km dari pusat kota Manado</p>
                   </div>
                   <a href="{{ Route('detail', $item->slug) }}" class="btn btn-detail">Lihat Detail</a>
                 </div>

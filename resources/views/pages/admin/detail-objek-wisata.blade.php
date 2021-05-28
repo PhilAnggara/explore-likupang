@@ -97,7 +97,7 @@
                             </a>
                             <div class="media-body">
                               <h5 class="mt-0 mb-1 text-dark">{{ $wahana->nama_wahana }} <small class="float-right text-primary">Rp {{ number_format($wahana->harga, 0, ',', '.') }} / Org</small></h5>
-                              <p class="text-muted">
+                              <p class="text-muted text-justify">
                                 {{ $wahana->deskripsi }}
                               </p>
                             </div>
@@ -134,7 +134,7 @@
                                   {{ Carbon\Carbon::parse($item->tanggal)->isoFormat('D MMMM YYYY') }}
                                 </small>
                               </p>
-                              <p class="text-muted">
+                              <p class="text-muted text-justify">
                                 {{ $kegiatan->deskripsi }}
                               </p>
                             </div>

@@ -5,7 +5,7 @@
 <!-- My Script-->
 <script src="{{ url('frontend/vendor/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ url('frontend/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ url('frontend/scripts/main.js') }}"></script>
+{{-- <script src="{{ url('frontend/scripts/main.js') }}"></script> --}}
 
 <!-- Core plugin JavaScript-->
 <script src="{{ url('frontend-admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>

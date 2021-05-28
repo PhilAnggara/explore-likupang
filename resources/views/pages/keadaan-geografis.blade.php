@@ -33,7 +33,7 @@
                 <span class="col-1"> : </span>
                 <span class="col-sm-9 col-12">&emsp;Kecamatan Likupang Barat</span>
               </span>
-              <br> &emsp;Luas Wilayah Kecamatan Likupang Timur adalah 290,841 km<sup>2</sup>. Musim panas terjadi pada bulan Maret sampai bulan Agustur, sedangkan musim hujan disertai angin barat dan timur terjadi pada bulan September sampai dengan bulan Februari setiap tahun. Suhu minimum terjadi pada musim penghujan dengan suhu minimum rata-rata 20 &#8451; dan suhu maksimum terjadi pada musim kemarau dengan suhu maksimum rata-rata 30 &#8451;, sedangkan curah hujan reta-rata 177 mm / tahun.
+              <br> &emsp;Luas Wilayah Kecamatan Likupang Timur adalah 290,841 km<sup>2</sup>. Musim panas terjadi pada bulan Maret sampai bulan Agustus, sedangkan musim hujan disertai angin barat dan timur terjadi pada bulan September sampai dengan bulan Februari setiap tahun. Suhu minimum terjadi pada musim penghujan dengan suhu minimum rata-rata 20 &#8451; dan suhu maksimum terjadi pada musim kemarau dengan suhu maksimum rata-rata 30 &#8451;, sedangkan curah hujan reta-rata 177 mm / tahun.
               <br>
             </p>
           </div>

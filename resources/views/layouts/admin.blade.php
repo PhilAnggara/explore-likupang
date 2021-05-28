@@ -49,6 +49,7 @@
 
   @stack('prepend-script')
   @include('includes.admin.script')
+  @include('includes.admin.pusher-script')
   @stack('addon-script')
 
   @livewireScripts

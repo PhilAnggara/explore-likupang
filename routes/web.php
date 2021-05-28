@@ -19,12 +19,6 @@ Route::get('/', 'MainController@index')
 Route::get('/objek-wisata', 'MainController@wisata')
   ->name('objek-wisata');
 
-Route::get('/objek-wisata/{slug}', 'MainController@detail')
-  ->name('detail');
-
-Route::post('/kirim-saran', 'MainController@saran')
-  ->name('kirim-saran');
-
 Route::get('/keadaan-geografis', 'MainController@geografis')
   ->name('keadaan-geografis');
 
@@ -33,6 +27,11 @@ Route::get('/demografi', 'MainController@demografi')
   
 Route::get('/struktur-pemerintahan', 'MainController@struktur')
   ->name('struktur-pemerintahan');
+
+Route::middleware(['auth'])->group(function () {
+  Route::get('/objek-wisata/{slug}', 'MainController@detail')->name('detail');
+  Route::post('/kirim-saran', 'MainController@saran')->name('kirim-saran');
+});
 
 Route::prefix('admin')
   ->namespace('Admin')
