@@ -84,10 +84,8 @@
                     <form action="{{ route('kirim-saran') }}" method="POST">
                       @csrf
                       <div class="input-group">
-                        @auth
-                          <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
-                          <input type="hidden" name="id_wisata" value="{{ $item->id_wisata }}">
-                        @endauth
+                        <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
+                        <input type="hidden" name="id_wisata" value="{{ $item->id_wisata }}">
                         <input type="text" name="saran" class="form-control" placeholder="Berikan saran...">
                         <div class="input-group-append">
                           <button class="btn btn-outline-primary" type="submit"><i class="far fa-paper-plane"></i></button>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Saran;
 use Illuminate\Http\Request;
+use Auth;
 
 class SaranController extends Controller
 {
@@ -16,8 +17,11 @@ class SaranController extends Controller
     public function index()
     {
         $items = Saran::orderByDesc('id_saran')->get();
+        $unread = Auth::user()->unreadNotifications->count();
+        
+        Auth::user()->unreadNotifications->markAsRead();
 
-        return view('pages.admin.data-saran', compact('items'));
+        return view('pages.admin.data-saran', compact('items', 'unread'));
     }
 
     /**

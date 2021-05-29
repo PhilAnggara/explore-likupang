@@ -24,7 +24,7 @@
                     {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM YYYY') }}
                   </small>
                 </p>
-                <p class="text-dark">
+                <p class="{{ $loop->iteration <= $unread ? 'font-weight-bold text-dark' : '' }}">
                   {{ $item->saran }}
                 </p>
               </div>

@@ -8,6 +8,11 @@ use App\Models\Wahana;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
+// Notification
+use App\Models\User;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\SaranMasuk;
+
 use App\Events\SaranDitambahkan;
 
 class MainController extends Controller
@@ -43,15 +48,32 @@ class MainController extends Controller
         $data = $request->all();
         
         Saran::create($data);
+
+        $admin = User::where('roles', 'ADMIN')->get();
+        $id_saran = Saran::all()->last()->id_saran;
+
+        Notification::send($admin, new SaranMasuk($id_saran));
         
         return redirect()->back();
     }
+
     // public function saran(Request $request)
     // {
     //     $data = $request->all();
         
     //     event(new SaranDitambahkan($data));
     //     dd($data);
+        
+    //     return redirect()->back();
+    // }
+    // public function saran(Request $request)
+    // {
+    //     $data = $request->all();
+
+    //     $admin = User::where('roles', 'ADMIN')->get();
+    //     $id_saran = Saran::all()->last()->id_saran;
+
+    //     Notification::send($admin, new SaranMasuk($id_saran));
         
     //     return redirect()->back();
     // }
