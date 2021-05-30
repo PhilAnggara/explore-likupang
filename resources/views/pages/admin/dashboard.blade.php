@@ -47,11 +47,11 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-prim text-uppercase mb-1">Pemasukan (Hari Ini)</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">Rp 3.000.000</div>
+              <div class="text-xs font-weight-bold text-prim text-uppercase mb-1">Saran Masuk (Hari Ini)</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $saran_hari }}</div>
             </div>
             <div class="col-auto">
-              <i class="fas fa-money-bill-wave fa-2x text-gray-300"></i>
+              <i class="fas fa-comment-dots fa-2x text-gray-300"></i>
             </div>
           </div>
         </div>
@@ -63,11 +63,11 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-prim text-uppercase mb-1">Total (Bulan Ini)</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">Rp 85.000.000</div>
+              <div class="text-xs font-weight-bold text-prim text-uppercase mb-1">Saran Masuk (Bulan Ini)</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $saran_bulan }}</div>
             </div>
             <div class="col-auto">
-              <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+              <i class="fas fa-comments fa-2x text-gray-300"></i>
             </div>
           </div>
         </div>

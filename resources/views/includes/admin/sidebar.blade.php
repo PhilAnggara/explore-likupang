@@ -33,12 +33,12 @@
       <span>Saran</span>
     </a>
   </li>
-  <li class="nav-item {{ Request::is('admin/laporan') ? 'active' : '' }}">
+  {{-- <li class="nav-item {{ Request::is('admin/laporan') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('laporan.index') }}">
       <i class="fas fa-fw fa-file-alt"></i>
       <span>Laporan</span>
     </a>
-  </li>
+  </li> --}}
   <li class="nav-item {{ Request::is('admin/pengguna') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('pengguna.index') }}">
       <i class="fas fa-fw fa-users"></i>
