@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Saran;
 use Livewire\Component;
+
+use Auth;
 
 class Notifikasi extends Component
 {
-    public $notif = 0;
+    public $notifikasi;
+    public $counter;
 
     protected $listener = [
         'saranDitambahkan' => 'updateNotif'
@@ -15,18 +17,21 @@ class Notifikasi extends Component
 
     public function updateNotif()
     {
-        $this->notif = Saran::all()->count();
+        $this->notifikasi = Auth::user()->unreadNotifications->take(3);
+        $this->counter = Auth::user()->unreadNotifications->count();
     }
 
     public function mount()
     {
-        $this->notif = Saran::all()->count();
+        $this->notifikasi = Auth::user()->unreadNotifications->take(3);
+        $this->counter = Auth::user()->unreadNotifications->count();
     }
 
     public function render()
     {
         return view('livewire.notifikasi', [
-            'notif' => $this->notif
+            'notifikasi' => $this->notifikasi,
+            'counter' => $this->counter
         ]);
     }
 }
