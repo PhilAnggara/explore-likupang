@@ -25,11 +25,17 @@ class MainController extends Controller
         ]);
     }
 
-    public function wisata()
+    public function wisata(Request $request)
     {
-        $items = Wisata::all();
+        if ($request->has('cari')) {            
+            $items = Wisata::Where('nama_wisata', 'LIKE', '%'.$request->cari.'%')->get()->sortBy('jarak');
+        } else {
+            $items = Wisata::all()->sortBy('jarak');
+        }
+
         return view('pages.objek-wisata', [
-            'items' => $items
+            'items' => $items,
+            'cari' => $request->cari
         ]);
     }
 

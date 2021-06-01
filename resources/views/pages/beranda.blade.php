@@ -10,8 +10,8 @@
       Wilayah Likupang Timur
     </h1>
     <div class="row mt-4 justify-content-center animate__animated animate__fadeInUp">
-      <form class="form-inline" action="pencarian.html">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search" autofocus />
+      <form class="form-inline" action="{{ route('objek-wisata') }}">
+        <input name="cari" class="form-control" type="search" placeholder="Cari..." aria-label="Search" autofocus />
         <button class="btn btn-info my-2 my-sm-0" type="submit">
           <i class="fas fa-search"></i>
         </button>

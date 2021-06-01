@@ -4,6 +4,15 @@
 @section('content')
 <main class="animate__animated animate__zoomIn animate__faster">
   <div class="container">
+    @if ($cari)
+      <div class="alert alert-primary" role="alert">
+        @if ($items->isNotEmpty())            
+          Menampilkan hasil untuk <b>'{{ $cari }}'</b>
+        @else
+          Tidak ditemukan hasil untuk <b>'{{ $cari }}'</b>
+        @endif
+      </div>
+    @endif
     <div class="row">
       @foreach ($items as $item)
         <div class="col-sm-6">
@@ -30,6 +39,16 @@
   </div>
 </main>
 @endsection
+
+@push('addon-style')
+  <style>
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+@endpush
 
 @push('addon-script')
   <script>
