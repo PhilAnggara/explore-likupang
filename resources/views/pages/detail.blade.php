@@ -141,7 +141,7 @@
                             <p class="mt-0 mb-1 font-weight-bold">
                               {{ $kegiatan->nama_kegiatan }}
                               <small class="float-right text-secondary">
-                                {{ Carbon\Carbon::parse($item->tanggal)->isoFormat('D MMMM YYYY') }}
+                                {{ Carbon\Carbon::parse($kegiatan->tanggal)->isoFormat('D MMMM YYYY') }}
                               </small>
                             </p>
                             <p class="text-muted text-justify">
