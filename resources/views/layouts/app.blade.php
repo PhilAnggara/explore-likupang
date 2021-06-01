@@ -11,6 +11,8 @@
   @include('includes.style')
   @stack('addon-style')
 
+  @livewireStyles
+
 </head>
 
 <body class="with-background">
@@ -22,6 +24,8 @@
   @stack('prepend-script')
   @include('includes.script')
   @stack('addon-script')
+
+  @livewireScripts
 
 </body>
 </html>
