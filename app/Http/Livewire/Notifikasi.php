@@ -11,7 +11,7 @@ class Notifikasi extends Component
     public $notifikasi;
     public $counter;
 
-    protected $listener = [
+    protected $listeners = [
         'saranDitambahkan' => 'updateNotif'
     ];
 
