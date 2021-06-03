@@ -28,7 +28,6 @@ body.with-background {
   font-weight: bold;
 }
 .home-page .jumbotron {
-  background-image: url("../images/header.jpg");
   background-size: cover;
   background-position: center;
   margin-top: -75px;
@@ -65,6 +64,22 @@ body.with-background {
   margin-top: 10px;
   font-size: 25px;
   font-weight: 300;
+}
+.home-page .jumbotron .carousel {
+  position: absolute;
+  top: 0;
+}
+.home-page .jumbotron .carousel .carousel-control-prev, .home-page .jumbotron .carousel .carousel-control-next {
+  position: absolute;
+  z-index: 10;
+}
+.home-page .jumbotron .carousel img {
+  height: 450px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 80%;
+     object-position: 50% 80%;
+  background-position: center;
 }
 .home-page .populer {
   margin-top: 80px;
@@ -363,6 +378,9 @@ main .lokasi .card {
     font-size: 32px;
     margin-top: 80px;
     margin-bottom: 40px;
+  }
+  .home-page .jumbotron .carousel img {
+    height: 400px;
   }
   .home-page .populer h2 {
     font-size: 22px;

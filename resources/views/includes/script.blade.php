@@ -5,7 +5,6 @@
 <script src="{{ url('frontend/vendor/aos/aos.js') }}"></script>
 <script src="{{ url('frontend/vendor/gijgo/js/gijgo.min.js') }}"></script>
 <script src="{{ url('frontend/vendor/owlcarousel/owl.carousel.min.js') }}"></script>
-<script src="{{ url('frontend/vendor/retina/retina.min.js') }}"></script>
 <script src="{{ url('frontend/vendor/simplelightbox/simple-lightbox.min.js') }}"></script>
 <script src="{{ url('frontend/vendor/tilt-js/tilt.jquery.min.js') }}"></script>
 <script src="{{ url('frontend/vendor/xzoom/xzoom.min.js') }}"></script>

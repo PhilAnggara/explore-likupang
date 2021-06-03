@@ -39,7 +39,7 @@ body.with-background {
 
   // Jumbotron
   .jumbotron {
-    background-image: url("../images/header.jpg");
+    // background-image: url("../images/header.jpg");
     background-size: cover;
     background-position: center;
     margin-top: -75px;
@@ -77,6 +77,20 @@ body.with-background {
       margin-top: 10px;
       font-size: 25px;
       font-weight: 300;
+    }
+    .carousel {
+      position: absolute;
+      top: 0;
+      .carousel-control-prev, .carousel-control-next {
+        position: absolute;
+        z-index: 10;
+      }
+      img {
+        height: 450px;
+        object-fit: cover;
+        object-position: 50% 80%;
+        background-position: center;
+      }
     }
   }
   // End of jumbotron
