@@ -93,8 +93,7 @@
                   </div>
                 </div>
 
-              <br> &emsp;Jumlah penduduk Kecamatan Likupang Timur sebanyak 19.216 jiwa yang terdiri dari laki-laki 9.785 jiwa, perempuan 9.431 jiwa dan 5.720 kepala keluarga. Mata pencarian masyarakat Kecamatan Likupang Timur yaitu: petani/pekebun 35%, nelayan/perikanan 25%, ASN/TNI-POLRI 15%, karyawan swasta 10%, tukang 10% dan lain-lain 5%.
-              <br><br> &emsp;Agama yang dianut masyarakat Kecamatan Likupang Timur yaitu kristen protestan 50%, katolik 10%, islam 35% dan lainnya (hindu dan budha) 5%.
+              <br> &emsp;Jumlah penduduk Kecamatan Likupang Timur sebanyak 19.216 jiwa yang terdiri dari laki-laki 9.785 jiwa, perempuan 9.431 jiwa dan 5.720 kepala keluarga. Mata pencarian masyarakat Kecamatan Likupang Timur yaitu: petani/pekebun 35%, nelayan/perikanan 25%, ASN/TNI-POLRI 15%, karyawan swasta 10%, tukang 10% dan lain-lain 5%. Agama yang dianut masyarakat Kecamatan Likupang Timur yaitu kristen protestan 50%, katolik 10%, islam 35% dan lainnya (hindu dan budha) 5%.
             </p>
           </div>
         </div>

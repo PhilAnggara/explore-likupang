@@ -50,7 +50,7 @@
 
               <div class="form-label-group">
                 <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required>
-                <label for="password">Password</label>
+                <label for="password">Kata Sandi</label>
                 @error('password')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
               
               <div class="form-label-group">
                 <input type="password" id="password-confirm" class="form-control" name="password_confirmation" placeholder="Konfirmasi Password" required>
-                <label for="password-confirm">Konfirmasi password</label>
+                <label for="password-confirm">Konfirmasi Kata Sandi</label>
               </div>
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Daftar</button>

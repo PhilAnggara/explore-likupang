@@ -33,7 +33,7 @@
                     <strong>{{ $message }}</strong>
                   </span>
                 @enderror
-                <label for="password">Password</label>
+                <label for="password">Kata Sandi</label>
               </div>
 
               <div class="from-label-group">
@@ -46,7 +46,7 @@
               <hr class="my-4">
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Masuk</button>
-              <a class="d-block text-center mt-2 mb-5" href="{{ url('register') }}">Daftar</a>
+              {{-- <a class="d-block text-center mt-2 mb-5" href="{{ url('register') }}">Daftar</a> --}}
             </form>
           </div>
         </div>
