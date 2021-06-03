@@ -16,3 +16,23 @@
 <!-- Page level custom scripts -->
 {{-- <script src="{{ url('frontend-admin/js/demo/chart-area-demo.js') }}"></script> --}}
 {{-- <script src="{{ url('frontend-admin/js/demo/chart-pie-demo.js') }}"></script> --}}
+
+<script>
+  window.addEventListener( "pageshow", function ( event ) {
+    var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
+
+    if ( historyTraversal ) {
+      window.location.reload();
+    }
+  });
+
+  // if(performance.navigation.type == 2){
+  //  location.reload(true);
+  // }
+
+  // jQuery( document ).ready(function( $ ) {
+  //   $(window).on('popstate', function() {
+  //     location.reload(true);
+  //   });
+  // });
+</script>
