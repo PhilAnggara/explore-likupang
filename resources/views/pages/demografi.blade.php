@@ -8,7 +8,8 @@
       <div class="col">
         <div class="card shadow">
           <div class="card-body">
-            <h1>Demografi</h1>
+            <h1 class="text-center">Demografi</h1>
+            <hr>
             <p class="nama-desa mt-4 text-justify">
               &emsp;Wilayah Kecamatan Likupang Timur terdiri dari 18 Desa dan 80 Jaga, yakni 14 Desa di daratan, dan 4 Desa di Pulau Bangka. Masyarakat Kecamatan Likupang Timur terdiri dari beberapa suku, yaitu : <br>
 

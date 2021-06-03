@@ -16,7 +16,7 @@ class SaranController extends Controller
      */
     public function index()
     {
-        $items = Saran::orderByDesc('id_saran')->get();
+        $items = Saran::orderByDesc('id_saran')->paginate(5);
         $unread = Auth::user()->unreadNotifications->count();
         
         Auth::user()->unreadNotifications->markAsRead();

@@ -15,8 +15,8 @@ class CreateSaranTable extends Migration
     {
         Schema::create('saran', function (Blueprint $table) {
             $table->id('id_saran');
-            $table->foreignId('id_user');
             $table->foreignId('id_wisata');
+            $table->string('nama');
             $table->string('saran');
             $table->timestamps();
             $table->softDeletes();

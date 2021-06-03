@@ -8,7 +8,8 @@
       <div class="col">
         <div class="card shadow">
           <div class="card-body">
-            <h1>Keadaan Geografis</h1>
+            <h1 class="text-center">Keadaan Geografis</h1>
+            <hr>
             <p class="nama-desa mt-4 text-justify">
               &emsp;Kecamatan Likupang Timur adalah salah satu Kecamatan di kabupaten Minahasa Utara, tepatnya di bagian utara pantai Minahasa Utara, merupakan jazirah bagian Utara dari Pulau Sulawesi, wilayahnya terbagi atas tiga bagian yaitu Daerah Pesisir Pantai, Daratan dan Pulau-pulau. Jarak ibu kota Kecamatan Likupang Timur Ke Ibu Kota Kabupaenn Minahasa Utara (Airmadidi) sekitar 29 Km dan Ke Ibu Kota Provinsi (Manado) sekitar 46 Km.
               <br><br>

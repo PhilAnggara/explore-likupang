@@ -39,12 +39,12 @@
       <span>Laporan</span>
     </a>
   </li> --}}
-  <li class="nav-item {{ Request::is('admin/pengguna') ? 'active' : '' }}">
+  {{-- <li class="nav-item {{ Request::is('admin/pengguna') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('pengguna.index') }}">
       <i class="fas fa-fw fa-users"></i>
       <span>Pengguna</span>
     </a>
-  </li>
+  </li> --}}
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">

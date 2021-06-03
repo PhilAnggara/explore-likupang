@@ -15,8 +15,8 @@ class Saran extends Model
     protected $primaryKey = 'id_saran';
 
     protected $fillable = [
-        'id_user',
         'id_wisata',
+        'nama',
         'saran'
     ];
 
@@ -24,9 +24,9 @@ class Saran extends Model
 
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class, 'id_user', 'id');
-    }
+    // public function user(){
+    //     return $this->belongsTo(User::class, 'id_user', 'id');
+    // }
     public function wisata(){
         return $this->belongsTo(Wisata::class, 'id_wisata', 'id_wisata');
     }

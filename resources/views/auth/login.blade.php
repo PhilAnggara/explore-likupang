@@ -12,7 +12,10 @@
              <!-- Background image for card set in CSS! -->
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center mt-sm-5 text-primary">Masuk</h5>
+            <div class="text-center">
+              <a class="navbar-brand" href="{{ route('home') }}">Explore Likupang</a>
+            </div>
+            <h5 class="card-title text-center mt-sm-2 text-primary">Masukan Hak Akses Sebagai Admin</h5>
             <form class="form-signin" method="POST" action="{{ route('login') }}">
               @csrf
 

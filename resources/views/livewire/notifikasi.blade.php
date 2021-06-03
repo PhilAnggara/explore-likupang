@@ -18,14 +18,14 @@
 				@endphp
 				<a class="dropdown-item d-flex align-items-center" href="{{ Route('saran.index') }}">
 					<div class="mr-3">
-						<img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $saran->user->name }}" class="rounded-circle float-left" width="40px">
+						<img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $saran->nama }}" class="rounded-circle float-left" width="40px">
 					</div>
 					<div>
 						<div class="small text-gray-500">
 							{{ Carbon\Carbon::parse($saran->created_at)->diffForHumans() }}
 						</div>
 						{{-- <span class="font-weight-bold">{{ Str::limit($saran->saran, 50) }}</span> --}}
-						<span class=""><b class="text-info">{{ $saran->user->name }}</b> memberikan saran pada <b>{{ $saran->wisata->nama_wisata }}</b></span>
+						<span class=""><b class="text-info">{{ $saran->nama }}</b> memberikan saran pada <b>{{ $saran->wisata->nama_wisata }}</b></span>
 					</div>
 				</a>
 			@empty

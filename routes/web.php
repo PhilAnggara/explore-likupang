@@ -28,10 +28,11 @@ Route::get('/demografi', 'MainController@demografi')
 Route::get('/struktur-pemerintahan', 'MainController@struktur')
   ->name('struktur-pemerintahan');
 
-Route::middleware(['auth'])->group(function () {
-  Route::get('/objek-wisata/{slug}', 'MainController@detail')->name('detail');
-  Route::post('/kirim-saran', 'MainController@saran')->name('kirim-saran');
-});
+Route::get('/objek-wisata/{slug}', 'MainController@detail')
+  ->name('detail');
+  
+Route::post('/kirim-saran', 'MainController@saran')
+  ->name('kirim-saran');
 
 Route::prefix('admin')
   ->namespace('Admin')

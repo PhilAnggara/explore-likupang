@@ -68,8 +68,8 @@
                     @forelse ($item->saran as $saran)
                       <div class="row">
                         <div class="col-sm-4 mt-2">
-                          <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $saran->user->name }}" alt="" class="rounded-circle float-left mr-3">
-                          <h3>{{ $saran->user->name }}</h3>
+                          <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $saran->nama }}" alt="" class="rounded-circle float-left mr-3">
+                          <h3>{{ $saran->nama }}</h3>
                           <small>
                             <i>{{ Carbon\Carbon::parse($saran->created_at)->diffForHumans() }}</i>
                           </small>
@@ -83,10 +83,13 @@
                     @endforelse
                     <form action="{{ route('kirim-saran') }}" method="POST">
                       @csrf
+                      <div class="input-group mb-2">
+                        <input type="text" name="nama" class="form-control" placeholder="Masukan nama..." required>
+                      </div>
                       <div class="input-group">
-                        <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
+                        {{-- <input type="hidden" name="id_user" value="{{ Auth::user()->id }}"> --}}
                         <input type="hidden" name="id_wisata" value="{{ $item->id_wisata }}">
-                        <input type="text" name="saran" class="form-control" placeholder="Berikan saran...">
+                        <input type="text" name="saran" class="form-control" placeholder="Berikan saran..." required>
                         <div class="input-group-append">
                           <button class="btn btn-outline-primary" type="submit"><i class="far fa-paper-plane"></i></button>
                         </div>
