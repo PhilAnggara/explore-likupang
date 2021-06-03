@@ -91,7 +91,8 @@
                         <input type="hidden" name="id_wisata" value="{{ $item->id_wisata }}">
                         <input type="text" name="saran" class="form-control" placeholder="Berikan saran..." required>
                         <div class="input-group-append">
-                          <button class="btn btn-outline-primary" type="submit"><i class="far fa-paper-plane"></i></button>
+                          {{-- <button class="btn btn-outline-primary" type="submit"><i class="far fa-paper-plane"></i></button> --}}
+                          <livewire:kirim-saran />
                         </div>
                       </div>
                     </form>

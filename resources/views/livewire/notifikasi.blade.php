@@ -1,4 +1,4 @@
-<div>
+<div {{ $notifikasi->isNotEmpty() ? 'wire:poll.8000ms=updateNotif' : 'wire:poll.6000ms=updateNotif' }}>
 	<li class="nav-item dropdown no-arrow mx-1">
 		<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-bell fa-fw"></i>
