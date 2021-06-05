@@ -47,6 +47,8 @@ Route::prefix('admin')
     Route::resource('saran', 'SaranController');
     Route::resource('laporan', 'LaporanController');
     Route::resource('pengguna', 'PenggunaController');
+    Route::get('saran-diterima/{id_saran}', 'SaranController@approve')->name('terima-saran');
+    Route::get('saran-ditolak/{id_saran}', 'SaranController@deny')->name('tolak-saran');
   });
 
 Auth::routes();

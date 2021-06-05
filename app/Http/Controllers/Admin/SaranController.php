@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\SaranRequest;
 use App\Models\Saran;
 use Illuminate\Http\Request;
 use Auth;
@@ -22,6 +23,21 @@ class SaranController extends Controller
         Auth::user()->unreadNotifications->markAsRead();
 
         return view('pages.admin.data-saran', compact('items', 'unread'));
+    }
+    
+    public function approve($id_saran)
+    {
+        $saran = Saran::find($id_saran);
+        $saran->status = 'Diterima';
+        $saran->save();
+        return back();
+    }
+    public function deny($id_saran)
+    {
+        $saran = Saran::find($id_saran);
+        $saran->status = 'Ditolak';
+        $saran->save();
+        return back();
     }
 
     /**

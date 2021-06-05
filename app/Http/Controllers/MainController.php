@@ -44,8 +44,11 @@ class MainController extends Controller
         $item = Wisata::with(['galeri','saran','wahana','kegiatan'])
             ->where('slug', $slug)
             ->firstOrFail();
+        $saran = Saran::where('id_wisata', $item->id_wisata)->where('status', 'Diterima')->get();
+
         return view('pages.detail', [
-            'item' => $item
+            'item' => $item,
+            'saran' => $saran
         ]);
     }
 

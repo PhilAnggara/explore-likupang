@@ -13,8 +13,18 @@
     @foreach ($items as $item)
       <div class="col-12 mb-1">
         <div class="card border-left-prim shadow h-100">
+          <div class="card-header d-flex justify-content-end">
+            <a href="{{ route('terima-saran', $item->id_saran) }}" class="btn btn-primary mr-2 {{ $item->status == 'Diterima' ? 'disabled btn-dark' : '' }}">
+              {{ $item->status == 'Diterima' ? 'Diterima' : 'Terima' }}
+            </a>
+            <a href="{{ route('tolak-saran', $item->id_saran) }}" class="btn btn-danger {{ $item->status == 'Ditolak' ? 'disabled btn-dark' : '' }}">
+              {{ $item->status == 'Ditolak' ? 'Ditolak' : 'Tolak' }}
+            </a>
+          </div>
           <div class="card-body py-2">
-            <p class="mb-2 font-weight-bold text-secondary">{{ $item->wisata->nama_wisata }}</p>
+            <a href="{{ Route('detail',$item->wisata->slug) }}">
+              <p class="mb-2 font-weight-bold text-secondary">{{ $item->wisata->nama_wisata }}</p>
+            </a>
             <div class="media">
               <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $item->nama }}" height="80px" width="80px" class="mr-3 rounded-circle" alt="...">
               <div class="media-body">
@@ -29,7 +39,7 @@
                 </p>
               </div>
             </div>
-            <a href="{{ Route('detail',$item->wisata->slug) }}" class="stretched-link"></a>
+            {{-- <a href="{{ Route('detail',$item->wisata->slug) }}" class="stretched-link"></a> --}}
           </div>
         </div>
       </div>

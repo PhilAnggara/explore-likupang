@@ -62,10 +62,10 @@
                 <div class="card">
                   <!-- Saran -->
                   <div class="card-body">
-                    <div class="alert alert-info" role="alert">
+                    {{-- <div class="alert alert-info" role="alert">
                       Saran dari orang-orang yang sudah pernah mengunjungi tempat ini
-                    </div>
-                    @forelse ($item->saran as $saran)
+                    </div> --}}
+                    @forelse ($saran as $saran)
                       <div class="row">
                         <div class="col-sm-4 mt-2">
                           <img src="https://ui-avatars.com/api/?background=random&bold=true&size=60&name={{ $saran->nama }}" alt="" class="rounded-circle float-left mr-3">
