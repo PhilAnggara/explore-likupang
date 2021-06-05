@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="shortcut icon" href="{{ url('frontend/images/favicon.ico') }}">
-  <title>Admin - Explore Likupang</title>
+  <title>Admin - Kenal Likupang</title>
 
   @stack('prepend-style')
   @include('includes.admin.style')

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Explore Likupang')
+@section('title', 'Kenal Likupang')
 
 @section('content')
 <main class="animate__animated animate__zoomIn animate__faster">

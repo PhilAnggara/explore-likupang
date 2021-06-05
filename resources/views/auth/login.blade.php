@@ -1,5 +1,5 @@
 @extends('layouts.log')
-@section('title', 'Masuk - Explore Likupang')
+@section('title', 'Masuk - Kenal Likupang')
 
 @section('content')
 <section class="login">
@@ -13,7 +13,7 @@
           </div>
           <div class="card-body">
             <div class="text-center">
-              <a class="navbar-brand" href="{{ route('home') }}">Explore Likupang</a>
+              <a class="navbar-brand" href="{{ route('home') }}">Kenal Likupang</a>
             </div>
             <h5 class="card-title text-center mt-sm-2 text-primary">Masukan Hak Akses Sebagai Admin</h5>
             <form class="form-signin" method="POST" action="{{ route('login') }}">

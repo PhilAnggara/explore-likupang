@@ -1,5 +1,5 @@
 @extends('layouts.log')
-@section('title', 'Daftar - Explore Likupang')
+@section('title', 'Daftar - Kenal Likupang')
 
 @section('content')
 <section class="login">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-  {{ $item->nama_wisata }} - Explore Likupang
+  {{ $item->nama_wisata }} - Kenal Likupang
 @endsection
 
 @section('content')

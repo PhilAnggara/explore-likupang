@@ -5,7 +5,7 @@
     <div class="sidebar-brand-icon">
       <i class="far fa-compass"></i>
     </div>
-    <div class="sidebar-brand-text mx-3 mr-5">Explore Likupang</div>
+    <div class="sidebar-brand-text mx-3 mr-5">Kenal Likupang</div>
   </a>
 
   <!-- Divider -->

@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'Explore Likupang')
+@section('title', 'Kenal Likupang')
 
 @section('content')
 <!-- Jumbotron -->
