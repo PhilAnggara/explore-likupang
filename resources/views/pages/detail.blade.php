@@ -133,7 +133,7 @@
                 <!-- Kegiatan -->
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title mb-4"><i class="far fa-calendar-alt fa-sm text-info"></i> Kegiatan yang pernah dilakukan disini</h5>
+                    <h5 class="card-title mb-4"><i class="far fa-calendar-alt fa-sm text-info"></i> Kegiatan Nasional/Internasional</h5>
                     <ul class="list-unstyled">
                       @forelse ($item->kegiatan as $kegiatan)
                         <hr>

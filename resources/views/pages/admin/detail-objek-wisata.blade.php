@@ -115,7 +115,7 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-sm-flex align-items-start justify-content-between">
-                        <h5 class="card-title text-dark mb-4 d-inline-block"><i class="far fa-calendar-alt fa-sm text-info"></i> Kegiatan yang pernah dilakukan</h5>
+                        <h5 class="card-title text-dark mb-4 d-inline-block"><i class="far fa-calendar-alt fa-sm text-info"></i> Kegiatan Nasional/Internasional</h5>
                         <button type="button" class="btn btn-sm btn-success shadow-sm d-inline-block" data-toggle="modal" data-target="#tambahKegiatanModal">
                           <i class="fas fa-plus fa-sm"></i> Tambah Kegiatan
                         </button>
