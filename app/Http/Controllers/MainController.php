@@ -19,7 +19,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $items = Wisata::where('populer', 1)->limit(4)->get();
+        $items = Wisata::with('galeri')->where('populer', 1)->take(4)->get();
         return view('pages.beranda', [
             'items' => $items
         ]);

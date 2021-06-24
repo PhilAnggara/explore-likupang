@@ -26,11 +26,11 @@
         @endguest
         @auth
           @if (auth()->user()->roles == 'ADMIN')
-            <a class="nav-link btn btn-outline-primary text-white px-3 mr-2" href="{{ Route('dashboard') }}">ADMIN</a>
+            <a class="nav-link btn btn-outline-primary text-primary px-3 mr-0 mr-sm-2" href="{{ Route('dashboard') }}">ADMIN</a>
           @endif
-          <form action="{{ url('logout') }}" method="POST">
+          <form action="{{ url('logout') }}" method="POST" class="mt-2 mt-sm-0">
             @csrf
-            <button class="nav-link btn btn-primary text-white px-3" type="submit">KELUAR</button>
+            <button class="nav-link btn btn-block btn-primary text-white px-3" type="submit">KELUAR</button>
           </form>
         @endauth
 
