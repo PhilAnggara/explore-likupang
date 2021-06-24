@@ -101,6 +101,18 @@
             <label for="deskripsi">Deskripsi</label>
             <textarea class="form-control" placeholder="Tuliskan tentang tempat wisata ini" id="deskripsi" name="deskripsi" required rows="5"></textarea>
           </div>
+          <div class="form-group">
+            <label for="kendaraan">Kendaraan</label>
+            <textarea class="form-control" id="kendaraan" name="kendaraan" required rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="retribusi">Retribusi</label>
+            <textarea class="form-control" id="retribusi" name="retribusi" required rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="makanan">Makanan</label>
+            <textarea class="form-control" id="makanan" name="makanan" required rows="2"></textarea>
+          </div>
           <div class="from-group">
             <div class="form-check">
               <input type="hidden" name="populer" value="0">
@@ -158,6 +170,18 @@
           <div class="form-group">
             <label for="deskripsi">Deskripsi</label>
             <textarea class="form-control" placeholder="Tuliskan tentang tempat wisata ini" id="deskripsi" name="deskripsi" required rows="5">{{ $edit->deskripsi }}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="kendaraan">Kendaraan</label>
+            <textarea class="form-control" id="kendaraan" name="kendaraan" required rows="2">{{ $edit->kendaraan }}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="retribusi">Retribusi</label>
+            <textarea class="form-control" id="retribusi" name="retribusi" required rows="2">{{ $edit->retribusi }}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="makanan">Makanan</label>
+            <textarea class="form-control" id="makanan" name="makanan" required rows="2">{{ $edit->makanan }}</textarea>
           </div>
           <div class="from-group">
             <div class="form-check">

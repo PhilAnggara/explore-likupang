@@ -21,6 +21,9 @@ class CreateWisataTable extends Migration
             $table->longText('lokasi');
             $table->integer('jarak');
             $table->longText('deskripsi');
+            $table->longText('kendaraan');
+            $table->longText('retribusi');
+            $table->longText('makanan');
             $table->boolean('populer');
             $table->timestamps();
             $table->softDeletes();

@@ -54,6 +54,18 @@
                     <p class="card-text text-justify">
                       {{ $item->deskripsi }}
                     </p>
+                    <p>
+                      <b>Kendaraan</b><br>
+                      {{ $item->kendaraan ? $item->kendaraan : '-' }}
+                    </p>
+                    <p>
+                      <b>Retribusi</b><br>
+                      {{ $item->retribusi ? $item->retribusi : '-' }}
+                    </p>
+                    <p>
+                      <b>Makanan</b><br>
+                      {{ $item->makanan ? $item->makanan : '-' }}
+                    </p>
                   </div>
                 </div>
                 <!-- End of tentang -->

@@ -21,6 +21,9 @@ class Wisata extends Model
         'lokasi',
         'jarak',
         'deskripsi',
+        'kendaraan',
+        'retribusi',
+        'makanan',
         'populer'
     ];
 
