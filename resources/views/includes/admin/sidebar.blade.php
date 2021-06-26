@@ -33,6 +33,27 @@
       <span>Saran</span>
     </a>
   </li>
+
+  <li class="nav-item {{ Request::is('admin/informasi-kecamatan*') ? 'active' : '' }}">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+      <i class="fas fa-fw fa-info"></i>
+      <span>Informasi Kecamatan</span>
+    </a>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Informasi Kecamatan:</h6>
+        <a class="collapse-item {{ Request::is('admin/informasi-kecamatan/keadaan-geografis*') ? 'active' : '' }}" href="{{ route('keadaan-geografis.index') }}">
+          Keadaan Geografis
+        </a>
+        <a class="collapse-item {{ Request::is('admin/informasi-kecamatan/demografi*') ? 'active' : '' }}" href="{{ route('demografi.index') }}">
+          Demografi
+        </a>
+        <a class="collapse-item {{ Request::is('admin/informasi-kecamatan/struktur-pemerintahan*') ? 'active' : '' }}" href="{{ route('struktur-pemerintahan.index') }}">
+          Struktur Pemerintahan
+        </a>
+      </div>
+    </div>
+  </li>
   {{-- <li class="nav-item {{ Request::is('admin/laporan') ? 'active' : '' }}">
     <a class="nav-link" href="{{ Route('laporan.index') }}">
       <i class="fas fa-fw fa-file-alt"></i>

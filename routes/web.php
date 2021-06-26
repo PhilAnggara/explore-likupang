@@ -38,6 +38,7 @@ Route::prefix('admin')
   ->namespace('Admin')
   ->middleware(['auth', 'admin'])
   ->group(function() {
+
     Route::get('/', 'DashboardController@index')->name('dashboard');
     
     Route::resource('data-objek-wisata', 'WisataController');
@@ -49,6 +50,13 @@ Route::prefix('admin')
     Route::resource('pengguna', 'PenggunaController');
     Route::get('saran-diterima/{id_saran}', 'SaranController@approve')->name('terima-saran');
     Route::get('saran-ditolak/{id_saran}', 'SaranController@deny')->name('tolak-saran');
+
+    Route::prefix('informasi-kecamatan')->group(function () {
+      Route::resource('keadaan-geografis', 'GeografisController');
+      Route::resource('demografi', 'DemografiController');
+      Route::resource('struktur-pemerintahan', 'StrukturController');
+    });
+    
   });
 
 Auth::routes();

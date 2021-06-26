@@ -11,8 +11,8 @@
             <h1 class="text-center">Struktur Pemerintahan</h1>
             <hr>
             <div class="text-center">
-              <img class="struktur-lg" src="frontend/images/struktur-lg.png" alt="">
-              <img class="struktur-sm" src="frontend/images/struktur-sm.png" alt="">
+              <img class="struktur-lg" src="{{ $desktop ? Storage::url($desktop->gambar) : '' }}" alt="">
+              <img class="struktur-sm" src="{{ $mobile ? Storage::url($mobile->gambar) : '' }}" alt="">
             </div>
           </div>
         </div>

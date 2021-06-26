@@ -6,6 +6,9 @@ use App\Models\Wisata;
 use App\Models\Saran;
 use App\Models\Wahana;
 use App\Models\Kegiatan;
+use App\Models\KeadaanGeografis;
+use App\Models\Demografi;
+use App\Models\StrukturPemerintahan;
 use Illuminate\Http\Request;
 
 // Notification
@@ -94,16 +97,27 @@ class MainController extends Controller
 
     public function geografis()
     {
-        return view('pages.keadaan-geografis');
+        $text = KeadaanGeografis::all()->last();
+        if ($text) {
+            $text = $text->text;
+        }
+        return view('pages.keadaan-geografis', compact('text'));
     }
 
     public function demografi()
     {
-        return view('pages.demografi');
+        $text = Demografi::all()->last();
+        if ($text) {
+            $text = $text->text;
+        }
+        return view('pages.demografi', compact('text'));
     }
 
     public function struktur()
     {
-        return view('pages.struktur-pemerintahan');
+        $desktop = StrukturPemerintahan::where('tipe', 'desktop')->get()->last();
+        $mobile = StrukturPemerintahan::where('tipe', 'mobile')->get()->last();
+
+        return view('pages.struktur-pemerintahan', compact('desktop', 'mobile'));
     }
 }
