@@ -17,7 +17,8 @@ class Saran extends Model
     protected $fillable = [
         'id_wisata',
         'nama',
-        'saran'
+        'saran',
+        'foto'
     ];
 
     protected $hidden = [

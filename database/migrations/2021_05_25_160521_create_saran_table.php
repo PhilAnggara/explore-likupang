@@ -18,6 +18,7 @@ class CreateSaranTable extends Migration
             $table->foreignId('id_wisata');
             $table->string('nama');
             $table->string('saran');
+            $table->text('foto')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
             $table->softDeletes();

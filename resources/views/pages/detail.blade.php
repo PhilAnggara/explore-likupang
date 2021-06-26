@@ -54,14 +54,17 @@
                     <p class="card-text text-justify">
                       {{ $item->deskripsi }}
                     </p>
+                    <hr>
                     <p>
                       <b>Kendaraan</b><br>
                       {{ $item->kendaraan ? $item->kendaraan : '-' }}
                     </p>
+                    <hr>
                     <p>
                       <b>Retribusi</b><br>
                       {{ $item->retribusi ? $item->retribusi : '-' }}
                     </p>
+                    <hr>
                     <p>
                       <b>Makanan</b><br>
                       {{ $item->makanan ? $item->makanan : '-' }}
@@ -89,14 +92,25 @@
                         <div class="col-sm-8 saran">
                           <p>{{ $saran->saran }}</p>
                         </div>
+                        @if ($saran->foto)
+                          <img src="{{ Storage::url($saran->foto) }}" class="img-fluid mx-sm-5 mt-2 rounded-lg" alt="Responsive image" style="height: 300px; width: 100%; object-fit: cover;">
+                        @endif
                       </div><hr>
                     @empty
                       <p class="text-center text-muted">Belum ada saran</p>
                     @endforelse
-                    <form action="{{ route('kirim-saran') }}" method="POST">
+                    <form action="{{ route('kirim-saran') }}" method="POST" enctype="multipart/form-data">
                       @csrf
-                      <div class="input-group mb-2">
-                        <input type="text" name="nama" class="form-control" placeholder="Masukan nama..." required>
+                      <div class="form-row">
+                        <div class="col mb-2">
+                          <input type="text" name="nama" class="form-control" placeholder="Masukan nama..." required>
+                        </div>
+                        <div class="col mb-2">
+                          <div class="custom-file text-truncate">
+                            <input type="file" class="custom-file-input" id="foto" name="foto">
+                            <label class="custom-file-label" for="foto">Sertakan Foto</label>
+                          </div>
+                        </div>
                       </div>
                       <div class="input-group">
                         {{-- <input type="hidden" name="id_user" value="{{ Auth::user()->id }}"> --}}
@@ -210,6 +224,8 @@
 
 @push('addon-script')
   <script>
-
+    $(document).on('change', '.custom-file-input', function (event) {
+      $(this).next('.custom-file-label').html(event.target.files[0].name);
+    })
   </script>
 @endpush

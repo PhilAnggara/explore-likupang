@@ -55,6 +55,11 @@ class MainController extends Controller
     public function saran(Request $request)
     {
         $data = $request->all();
+        if ($request->file('foto')) {
+            $data['foto'] = $request->file('foto')->store(
+                'aset/gambar/saran', 'public'
+            );
+        }
         
         Saran::create($data);
 

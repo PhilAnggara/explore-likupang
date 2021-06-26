@@ -40,6 +40,9 @@
               </div>
             </div>
             {{-- <a href="{{ Route('detail',$item->wisata->slug) }}" class="stretched-link"></a> --}}
+            @if ($item->foto)
+              <img src="{{ Storage::url($item->foto) }}" class="img-fluid my-2 rounded-lg" alt="Responsive image" style="height: 300px; width: 100%; object-fit: cover;">
+            @endif
           </div>
         </div>
       </div>
